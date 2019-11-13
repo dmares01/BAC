@@ -12,7 +12,19 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+/*
+     uhahufdahfaldu hasdlfhuau halhu lusdh lsadui liasdfgliuadhluadfoasd
+     adsg
+     asd
+     gsda
+     f
+     sf
+     sad
+     fgd
+     sfg
+     aer
+     e
+     */
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
