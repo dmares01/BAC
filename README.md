@@ -24,3 +24,6 @@ Our goal is to use algorithms to calculate the users BAC based off of their phys
 8) Allow changing quantity to enter drinks in bulk
 9) Allow user to sync to contacts to quick send text or location 
 10) Prompt user to request a ride sharing service if BAC is above legal limit 
+
+## Why we wanted to make this App <br>
+Being college students turning 21 there is the usaul 
