@@ -4,7 +4,7 @@
 An app made for a class project at Augsburg University. This app is a simple streamlined BAC (Blood Alcohol Content) calculator meant to be more user friendly than other apps currently on the app store. Although not a perfectly accurate representation of a user's BAC, the goal is to make a user more aware of their BAC levels. The app will contain information about BAC, how body types and age affect it, and possibly the consquences of driving with a BAC above the limit. <br>
 Our goal is to use algorithms to calculate the users BAC based off of their physical info entered into the app as well as the food they have eaten. Of course the most important part is the drinks the user has had and the time for each drink. We are trying to make the majority of the information optional so as to minimize the amount of info the user needs to enter. If they want a more detailed number then they can choose to enter in more information. A simple layout combined with a minimal number of taps will hopefully set our app apart from others, which require large amounts of typing hampered by clunky interfaces.<br>
 
-
+![BAC Image](https://i.imgur.com/gQwaJN9.jpg)
 ## Link to Google Docs <br>
 
 [BAC Scenarios](https://docs.google.com/document/d/1u3OXSJ5G8DdRS1LxskDlbqc7tLgrBbNJc6JzwiwSf6I/edit#)<br>
