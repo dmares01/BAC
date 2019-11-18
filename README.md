@@ -7,10 +7,13 @@ Our goal is to use algorithms to calculate the users BAC based off of their phys
 
 ## Link to Google Docs <br>
 **BAC Scenarios**<br>
-https://docs.google.com/document/d/1u3OXSJ5G8DdRS1LxskDlbqc7tLgrBbNJc6JzwiwSf6I/edit#<br>
+[Scenarios](https://docs.google.com/document/d/1u3OXSJ5G8DdRS1LxskDlbqc7tLgrBbNJc6JzwiwSf6I/edit#)<br>
 <br>
 **BAC Functions** <br>
-https://docs.google.com/document/d/11pO6yAw4eqVGGrQYnekvYLGR54cuWHCdM1KUqGbwkYU/edit
+[Functions](https://docs.google.com/document/d/11pO6yAw4eqVGGrQYnekvYLGR54cuWHCdM1KUqGbwkYU/edit)<br>
+<br>
+**BAC Interactions** <br>
+[Interactions](https://docs.google.com/document/d/1LTmMt3LGi2YHk1kCgqYF2N3NqvX1yO3AAoYV1BNSqgQ/edit)<br>
 <br>
 
 ## Planned Features <br>
