@@ -26,4 +26,8 @@ Our goal is to use algorithms to calculate the users BAC based off of their phys
 10) Prompt user to request a ride sharing service if BAC is above legal limit 
 
 ## Why we wanted to make this App <br>
-Being college students turning 21 there is the usaul 
+Being college students turning, or recently turned, 21, alcohol is something that is a part of our social lives. Well we wanted a way to be able to drink, but do so in a smart fashion when possible. We figured it would be nice to know our Blood Acohol Content (BAC) while we were drinking. We scoured the app store and found a few apps that tracked your drink and used various algorithms to determine your BAC. The problem was every app was clunky, took too many steps to enter a drink, or overall just was not good to look at. This made entering drinks or information so much of a hassle that we just didn't do it. When we had to pick an app for a class project, we knew what we wanted to do.
+
+We figured we could make our own app that is more user friendly and much more streamlined. Be able to enter drinks in as few taps as possible, avoid typing at all costs, and keep it simple enough that even someone who was intoxicated could do it. Being more user friendly is the most important part. A simple design that is easy to understand will go a long way. Colors and images are something that can always be updated, and are very important, but the usability is the focus. 
+
+This will be the first app we produce and publish on the app store so there will be hurdles along the way. Our final product may not be exactly what we dreamed of, but it will be a work in progress for a longtime as this is something that is usable to us. We want to constantly improve and fix bugs because this is an app that we ourselves will be using as well. 
