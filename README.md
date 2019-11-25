@@ -31,3 +31,11 @@ Being college students turning, or recently turned, 21, alcohol is something tha
 We figured we could make our own app that is more user friendly and much more streamlined. Be able to enter drinks in as few taps as possible, avoid typing at all costs, and keep it simple enough that even someone who was intoxicated could do it. Being more user friendly is the most important part. A simple design that is easy to understand will go a long way. Colors and images are something that can always be updated, and are very important, but the usability is the focus. 
 
 This will be the first app we produce and publish on the app store so there will be hurdles along the way. Our final product may not be exactly what we dreamed of, but it will be a work in progress for a longtime as this is something that is usable to us. We want to constantly improve and fix bugs because this is an app that we ourselves will be using as well. 
+
+
+## Possible API's <br>
+[Lyft](https://www.lyft.com/developers/products/ride-request) <br>
+[Cocktail API](https://www.thecocktaildb.com/api.php) <br>
+[Beer API](https://untappd.com/api/docs) (Requires approval)<br>
+[Food and Meals API](https://www.themealdb.com/api.php)<br>
+[Private Food API](https://www.myfitnesspal.com/api) (Requires approval) <br>
