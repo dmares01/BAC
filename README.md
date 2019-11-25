@@ -36,5 +36,6 @@ This will be the first app we produce and publish on the app store so there will
 ## Possible API's <br>
 [Lyft](https://www.lyft.com/developers/products/ride-request) <br>
 [Cocktail API](https://www.thecocktaildb.com/api.php) <br>
-[Beer API](https://untappd.com/api/docs) <br>
-[Food and Meals API](https://www.themealdb.com/api.php)
+[Beer API](https://untappd.com/api/docs) (Requires approval)<br>
+[Food and Meals API](https://www.themealdb.com/api.php)<br>
+[Private Food API](https://www.myfitnesspal.com/api) (Requires approval) <br>
