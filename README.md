@@ -34,5 +34,6 @@ This will be the first app we produce and publish on the app store so there will
 
 
 ## Possible API's <br>
-https://www.lyft.com/developers/products/ride-request <br>
-[Drink API](https://www.thecocktaildb.com/api.php)
+[Lyft](https://www.lyft.com/developers/products/ride-request) <br>
+[Cocktail API](https://www.thecocktaildb.com/api.php) <br>
+[Beer API](https://untappd.com/api/docs) <br>
