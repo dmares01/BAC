@@ -87,16 +87,15 @@ class CalculateController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     //Picker outlets
     @IBOutlet var agePicker: UIPickerView!
     var agePickerData : [Int] = [Int]()
-    
+    var inputtedUserData = UserInfo(name: " ", bodyWeight: 0.0, sex: 0, age: 0.0)
     //enter button
     @IBOutlet var enterDrinksButton: UIButton!
     @IBAction func userInfoEntered(_ sender: UIButton) {
-        var inputtedUserData: UserInfo
         //need prompt to save user data in memory
         inputtedUserData.name = " "
-        inputtedUserData.bodyWeight = Double(weightField.text)
+        inputtedUserData.bodyWeight = Double(weightField.text!)!
         inputtedUserData.sex = genderSelector.selectedSegmentIndex
-        inputtedUserData.age = agePicker.selectedRow(inComponent: 1)
+        inputtedUserData.age = Double(agePicker.selectedRow(inComponent: 0))
     }
     
     //weight outlets

@@ -13,20 +13,17 @@ import Foundation
 // Widmark formula = (((#oz * %alcohol *.789)/(body weight(lbs) * 454 * r) *100)- (hours drinking * .015)
                         // r = 0.55 for women and 0.68 for men and 0.61 for other
 
-func calculateGenForm(user: UserInfo, drink: DrinkInfo) -> Double{
-    
-    (amountOfAlcohol * percentOfAlcohol * 0.075) / (bodyWeight - drinkingTime * 0.015)
-    
+func calculateGenForm(user: UserInfo, drink: DrinkInfo, session: SessionInfo) -> Double{
+    let genFormBAC: Double = (drink.amountOfAlcohol * drink.percentOfAlcohol * 0.075) / (user.bodyWeight - session.drinkingTime * 0.015)
+    return genFormBAC
 }
 
-func calculateWidmarkForm(user: UserInfo, drink: DrinkInfo) -> Double{
-    
-    
-    
-    (((amountOfAlcohol * percentOfAlcohol * 0.789)/(bodyWeight * 454 * r) *100)- (drinkingTime * .015))
- 
+func calculateWidmarkForm(user: UserInfo, drink: DrinkInfo, session: SessionInfo) -> Double{
+    let r: Double = 0.0;
+    let widmarkBAC: Double;
+    widmarkBAC = (((drink.amountOfAlcohol * drink.percentOfAlcohol * 0.789)/(user.bodyWeight * 454 * r) * 100) - (session.drinkingTime * 0.015))
+    return widmarkBAC;
 }
-
 
 func calculateBAC(){
     
