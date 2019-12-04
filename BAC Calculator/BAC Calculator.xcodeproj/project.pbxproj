@@ -15,6 +15,7 @@
 		8C8E77FD238846B9003F8583 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C8E77FB238846B9003F8583 /* LaunchScreen.storyboard */; };
 		8C8E7808238846B9003F8583 /* BAC_CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8E7807238846B9003F8583 /* BAC_CalculatorTests.swift */; };
 		8C8E7813238846B9003F8583 /* BAC_CalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8E7812238846B9003F8583 /* BAC_CalculatorUITests.swift */; };
+		8CF563B223981F1B00CF3A6F /* EnterDrinkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF563B123981F1B00CF3A6F /* EnterDrinkController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		8C8E780E238846B9003F8583 /* BAC CalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BAC CalculatorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C8E7812238846B9003F8583 /* BAC_CalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BAC_CalculatorUITests.swift; sourceTree = "<group>"; };
 		8C8E7814238846B9003F8583 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CF563B123981F1B00CF3A6F /* EnterDrinkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterDrinkController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				8C8E77F0238846B8003F8583 /* AppDelegate.swift */,
 				8C8E77F4238846B8003F8583 /* ViewController.swift */,
 				8C8E77F6238846B8003F8583 /* Main.storyboard */,
+				8CF563B123981F1B00CF3A6F /* EnterDrinkController.swift */,
 				8C8E77F9238846B9003F8583 /* Assets.xcassets */,
 				8C8E77FB238846B9003F8583 /* LaunchScreen.storyboard */,
 				8C8E77FE238846B9003F8583 /* Info.plist */,
@@ -262,6 +265,7 @@
 				6E83F036238CA21900F87C82 /* CalculateController.swift in Sources */,
 				8C8E77F5238846B8003F8583 /* ViewController.swift in Sources */,
 				8C8E77F1238846B8003F8583 /* AppDelegate.swift in Sources */,
+				8CF563B223981F1B00CF3A6F /* EnterDrinkController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CalculateController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class CalculateController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1;
     }
@@ -26,7 +26,7 @@ class CalculateController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         selectLoadingScreen();
         agePicker.dataSource = self;
         agePicker.delegate = self;
-    
+        self.weightField.delegate = self
    
     }
     
@@ -54,10 +54,6 @@ class CalculateController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         for i in 21...100{
             agePickerData.append(i)
         }
-        
-        
-        
-
         storedData = true;
     }
     func loadUserDataScreen(){
@@ -68,19 +64,73 @@ class CalculateController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     //Two boxes for feet and inches vs one box for centimeters
     //or one box for both
     
+    fileprivate func validate(_ textField: UITextField) ->(Bool, String?){
+        guard let text = textField.text else {
+            return (false, nil)
+        }
+        if text.count >= 2{
+            return(true, "Please make sure to select pounds or kilograms")
+        }
+        else if text.count == 1{
+            return(false, "Are you sure you can legally drink?")
+        }
+        else{
+            return(false, "This field can not be empty")
+        }
+    }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     // MARK: - User Prompt Outlets
+    //Picker outlets
     @IBOutlet var agePicker: UIPickerView!
     var agePickerData : [Int] = [Int]()
+    
+    //enter button
     @IBOutlet var enterDrinksButton: UIButton!
+    @IBAction func userInfoEntered(_ sender: UIButton) {
+        var inputtedUserData: UserInfo
+        //need prompt to save user data in memory
+        inputtedUserData.name = " "
+        inputtedUserData.bodyWeight = Double(weightField.text)
+        inputtedUserData.sex = genderSelector.selectedSegmentIndex
+        inputtedUserData.age = agePicker.selectedRow(inComponent: 1)
+    }
+    
+    //weight outlets
+    @IBOutlet var weightField: UITextField!
+    @IBOutlet var unitsSelector: UISegmentedControl!
+    @IBOutlet var weightErrorMessage: UILabel!
+    @IBAction func validateWeightInfo(_ sender: Any) {
+        let (valid, message) = validate(weightField)
+        if valid {
+            enterDrinksButton.isHidden = false;
+            weightErrorMessage.isHidden = true;
+        }
+        else{
+            weightErrorMessage.isHidden = false;
+            weightErrorMessage.text = message;
+            enterDrinksButton.isHidden = true;
+        }
+    }
+    
+    //gender selector
+    @IBOutlet var genderSelector: UISegmentedControl!
     
     
-/*
+    
+
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "drinkSegue"{
+            let enterDrinkController = segue.destination as! EnterDrinkController
+            enterDrinkController.userData = inputtedUserData
+        }
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }
