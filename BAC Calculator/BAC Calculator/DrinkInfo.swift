@@ -45,8 +45,20 @@ var beers: [DrinkInfo] = [
     DrinkInfo(name: "Amstel Light",amountOfAlcohol: 12, typeOfAlcohol: "Beer", percentOfAlcohol: 4.2),
     DrinkInfo(name: "Kirin Light",amountOfAlcohol: 12, typeOfAlcohol: "Beer", percentOfAlcohol: 3.31),
     DrinkInfo(name: "Milwaukee's Best Light",amountOfAlcohol: 12, typeOfAlcohol: "Beer", percentOfAlcohol: 4.2),
+    DrinkInfo(name: "Michelob Light",amountOfAlcohol: 12, typeOfAlcohol: "Beer", percentOfAlcohol: 4.1),
     DrinkInfo(name: "Natural Light",amountOfAlcohol: 12, typeOfAlcohol: "Beer", percentOfAlcohol: 4.2),
     
+    //Lagers, Bocks and Pilsners
+    
+    DrinkInfo(name: "Budweiser",amountOfAlcohol: 12, typeOfAlcohol: "Beer", percentOfAlcohol: 5),
+    DrinkInfo(name: "Coors Banquet",amountOfAlcohol: 12, typeOfAlcohol: "Beer", percentOfAlcohol: 5),
+    DrinkInfo(name: "Michelob Ultra",amountOfAlcohol: 12, typeOfAlcohol: "Beer", percentOfAlcohol: 4.2),
+    DrinkInfo(name: "Michelob AmberBock",amountOfAlcohol: 12, typeOfAlcohol: "Beer", percentOfAlcohol: 5.1),
+    DrinkInfo(name: "Heineken",amountOfAlcohol: 12, typeOfAlcohol: "Beer", percentOfAlcohol: 5),
+
+
+
+
 ]
 
     
