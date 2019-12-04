@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+
 		3016A888238DFF1B009DCE18 /* CalculateBAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3016A887238DFF1B009DCE18 /* CalculateBAC.swift */; };
 		30B6C93C2397F3490057E498 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B6C93B2397F3490057E498 /* UserInfo.swift */; };
 		30B6C93E2397F4D30057E498 /* DrinkInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B6C93D2397F4D30057E498 /* DrinkInfo.swift */; };
 		30B6C940239810F20057E498 /* SessionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B6C93F239810F20057E498 /* SessionInfo.swift */; };
+		6E83F036238CA21900F87C82 /* CalculateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E83F035238CA21900F87C82 /* CalculateController.swift */; };
 		8C8E77F1238846B8003F8583 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8E77F0238846B8003F8583 /* AppDelegate.swift */; };
 		8C8E77F5238846B8003F8583 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8E77F4238846B8003F8583 /* ViewController.swift */; };
 		8C8E77F8238846B8003F8583 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C8E77F6238846B8003F8583 /* Main.storyboard */; };
@@ -18,6 +20,7 @@
 		8C8E77FD238846B9003F8583 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C8E77FB238846B9003F8583 /* LaunchScreen.storyboard */; };
 		8C8E7808238846B9003F8583 /* BAC_CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8E7807238846B9003F8583 /* BAC_CalculatorTests.swift */; };
 		8C8E7813238846B9003F8583 /* BAC_CalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8E7812238846B9003F8583 /* BAC_CalculatorUITests.swift */; };
+		8CF563B223981F1B00CF3A6F /* EnterDrinkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF563B123981F1B00CF3A6F /* EnterDrinkController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +45,7 @@
 		30B6C93B2397F3490057E498 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		30B6C93D2397F4D30057E498 /* DrinkInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkInfo.swift; sourceTree = "<group>"; };
 		30B6C93F239810F20057E498 /* SessionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionInfo.swift; sourceTree = "<group>"; };
+		6E83F035238CA21900F87C82 /* CalculateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateController.swift; sourceTree = "<group>"; };
 		8C8E77ED238846B8003F8583 /* BAC Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BAC Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C8E77F0238846B8003F8583 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C8E77F4238846B8003F8583 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +59,7 @@
 		8C8E780E238846B9003F8583 /* BAC CalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BAC CalculatorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C8E7812238846B9003F8583 /* BAC_CalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BAC_CalculatorUITests.swift; sourceTree = "<group>"; };
 		8C8E7814238846B9003F8583 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CF563B123981F1B00CF3A6F /* EnterDrinkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterDrinkController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,13 +113,15 @@
 				8C8E77F0238846B8003F8583 /* AppDelegate.swift */,
 				8C8E77F4238846B8003F8583 /* ViewController.swift */,
 				8C8E77F6238846B8003F8583 /* Main.storyboard */,
-				3016A887238DFF1B009DCE18 /* CalculateBAC.swift */,
-				30B6C93B2397F3490057E498 /* UserInfo.swift */,
-				30B6C93F239810F20057E498 /* SessionInfo.swift */,
-				30B6C93D2397F4D30057E498 /* DrinkInfo.swift */,
 				8C8E77F9238846B9003F8583 /* Assets.xcassets */,
 				8C8E77FB238846B9003F8583 /* LaunchScreen.storyboard */,
 				8C8E77FE238846B9003F8583 /* Info.plist */,
+				6E83F035238CA21900F87C82 /* CalculateController.swift */,
+        3016A887238DFF1B009DCE18 /* CalculateBAC.swift */,
+				30B6C93B2397F3490057E498 /* UserInfo.swift */,
+				30B6C93F239810F20057E498 /* SessionInfo.swift */,
+				30B6C93D2397F4D30057E498 /* DrinkInfo.swift */,
+        8CF563B123981F1B00CF3A6F /* EnterDrinkController.swift */,
 			);
 			path = "BAC Calculator";
 			sourceTree = "<group>";
@@ -269,11 +276,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				30B6C93C2397F3490057E498 /* UserInfo.swift in Sources */,
+				6E83F036238CA21900F87C82 /* CalculateController.swift in Sources */,
 				8C8E77F5238846B8003F8583 /* ViewController.swift in Sources */,
 				30B6C940239810F20057E498 /* SessionInfo.swift in Sources */,
 				8C8E77F1238846B8003F8583 /* AppDelegate.swift in Sources */,
 				3016A888238DFF1B009DCE18 /* CalculateBAC.swift in Sources */,
 				30B6C93E2397F4D30057E498 /* DrinkInfo.swift in Sources */,
+				8CF563B223981F1B00CF3A6F /* EnterDrinkController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
