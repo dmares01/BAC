@@ -9,13 +9,12 @@
 import UIKit
 
 class EnterDrinkController: UIViewController {
-
+    var userData: UserInfo!
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        print(userData.bodyWeight)
     }
-    var userInfo: UserInfo
 
     /*
     // MARK: - Navigation
