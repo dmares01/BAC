@@ -96,6 +96,7 @@ class CalculateController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         inputtedUserData.bodyWeight = Double(weightField.text!)!
         inputtedUserData.sex = genderSelector.selectedSegmentIndex
         inputtedUserData.age = Double(agePicker.selectedRow(inComponent: 0))
+        performSegue(withIdentifier: "drinkSegue", sender: nil)
     }
     
     //weight outlets

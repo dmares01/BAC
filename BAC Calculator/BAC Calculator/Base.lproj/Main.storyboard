@@ -115,7 +115,6 @@
                                         </state>
                                         <connections>
                                             <action selector="userInfoEntered:" destination="in4-td-Y9K" eventType="touchUpInside" id="aNl-pX-CMM"/>
-                                            <segue destination="LFb-He-W2c" kind="show" identifier="drinkSegue" id="m2s-AE-3KB"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -156,6 +155,7 @@
                         <outlet property="unitsSelector" destination="FNb-5m-weq" id="xjE-Zh-Pl0"/>
                         <outlet property="weightErrorMessage" destination="4Zs-Xv-4Q3" id="rOg-o2-2DS"/>
                         <outlet property="weightField" destination="Fg3-b3-slL" id="ko2-gh-BGB"/>
+                        <segue destination="LFb-He-W2c" kind="show" identifier="drinkSegue" id="8ZY-5K-Rkf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VyU-vH-C0Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
