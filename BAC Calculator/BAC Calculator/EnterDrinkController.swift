@@ -23,6 +23,18 @@ class EnterDrinkController: UIViewController {
     @IBAction func printButton(_ sender: Any) {
         printAll()
     }
+    
+
+    
+    
+    @IBOutlet weak var hoursSpentOutlet: UITextField!
+    
+    
+    @IBAction func hoursSpentButton(_ sender: Any) {
+    }
+    
+    
+    
     /*
     // MARK: - Navigation
 
