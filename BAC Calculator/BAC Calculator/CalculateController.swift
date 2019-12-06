@@ -88,6 +88,9 @@ class CalculateController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     @IBOutlet var agePicker: UIPickerView!
     var agePickerData : [Int] = [Int]()
     var inputtedUserData = UserInfo(name: " ", bodyWeight: 0.0, sex: 0, age: 0.0)
+    
+    
+    
     //enter button
     @IBOutlet var enterDrinksButton: UIButton!
     @IBAction func userInfoEntered(_ sender: UIButton) {
@@ -95,14 +98,18 @@ class CalculateController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         inputtedUserData.name = " "
         inputtedUserData.bodyWeight = Double(weightField.text!)!
         inputtedUserData.sex = genderSelector.selectedSegmentIndex
-        inputtedUserData.age = Double(agePicker.selectedRow(inComponent: 0))
+        // male = 0; female = 1; other = 2
+        inputtedUserData.age = (Double(agePicker.selectedRow(inComponent: 0))+21)
         performSegue(withIdentifier: "drinkSegue", sender: nil)
     }
+    
+    
     
     //weight outlets
     @IBOutlet var weightField: UITextField!
     @IBOutlet var unitsSelector: UISegmentedControl!
     @IBOutlet var weightErrorMessage: UILabel!
+    //change action to add user button right away
     @IBAction func validateWeightInfo(_ sender: Any) {
         let (valid, message) = validate(weightField)
         if valid {
@@ -119,8 +126,6 @@ class CalculateController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     //gender selector
     @IBOutlet var genderSelector: UISegmentedControl!
     
-    
-    
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -128,9 +133,6 @@ class CalculateController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             let enterDrinkController = segue.destination as! EnterDrinkController
             enterDrinkController.userData = inputtedUserData
         }
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
     
-
 }

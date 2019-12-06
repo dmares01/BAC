@@ -115,6 +115,9 @@
                                         </state>
                                         <connections>
                                             <action selector="userInfoEntered:" destination="in4-td-Y9K" eventType="touchUpInside" id="aNl-pX-CMM"/>
+                                            <segue destination="0sM-wa-Egq" kind="popoverPresentation" identifier="saveUserDataSegue" popoverAnchorView="VnI-jG-zvg" id="jlx-HS-PqU">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -162,6 +165,76 @@
             </objects>
             <point key="canvasLocation" x="1715.9420289855075" y="-1176.5625"/>
         </scene>
+        <!--Save Data View Controller-->
+        <scene sceneID="uUg-KA-Tzz">
+            <objects>
+                <viewController storyboardIdentifier="SaveDataPrompt" id="0sM-wa-Egq" customClass="SaveDataViewController" customModule="BAC_Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wsK-7z-RvX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZR-xn-oOj">
+                                <rect key="frame" x="130" y="264" width="154" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="Yes"/>
+                                <connections>
+                                    <action selector="saveDataYesButton:" destination="0sM-wa-Egq" eventType="touchUpInside" id="eCE-2b-CHr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qm-oA-frk">
+                                <rect key="frame" x="130" y="340" width="154" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="No"/>
+                                <connections>
+                                    <action selector="saveDataNoButton:" destination="0sM-wa-Egq" eventType="touchUpInside" id="ArJ-N7-icS"/>
+                                </connections>
+                            </button>
+                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter your name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V0p-qp-N6y">
+                                <rect key="frame" x="70" y="484" width="274" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="saveDataEnterNameSubmit:" destination="0sM-wa-Egq" eventType="editingDidEnd" id="zgP-ge-Vvg"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Would you like to save your information?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vev-pw-QLE">
+                                <rect key="frame" x="53" y="120" width="308" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="WZ6-cd-4V1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="OZR-xn-oOj" firstAttribute="top" secondItem="Vev-pw-QLE" secondAttribute="bottom" constant="64" id="F82-bC-HiT"/>
+                            <constraint firstItem="G0I-Ub-KDE" firstAttribute="trailing" secondItem="Vev-pw-QLE" secondAttribute="trailing" constant="53" id="Ozb-uk-EyR"/>
+                            <constraint firstItem="G0I-Ub-KDE" firstAttribute="trailing" secondItem="V0p-qp-N6y" secondAttribute="trailing" constant="70" id="Qsv-ci-v7H"/>
+                            <constraint firstItem="Vev-pw-QLE" firstAttribute="leading" secondItem="G0I-Ub-KDE" secondAttribute="leading" constant="53" id="YCM-oC-Xx0"/>
+                            <constraint firstItem="V0p-qp-N6y" firstAttribute="top" secondItem="8qm-oA-frk" secondAttribute="bottom" constant="84" id="ZkK-K5-2xb"/>
+                            <constraint firstItem="G0I-Ub-KDE" firstAttribute="trailing" secondItem="8qm-oA-frk" secondAttribute="trailing" constant="130" id="a5Z-4g-H07"/>
+                            <constraint firstItem="8qm-oA-frk" firstAttribute="top" secondItem="OZR-xn-oOj" secondAttribute="bottom" constant="16" id="byC-tO-sRh"/>
+                            <constraint firstItem="G0I-Ub-KDE" firstAttribute="bottom" secondItem="V0p-qp-N6y" secondAttribute="bottom" constant="290" id="fUO-fB-wqb"/>
+                            <constraint firstItem="8qm-oA-frk" firstAttribute="leading" secondItem="G0I-Ub-KDE" secondAttribute="leading" constant="130" id="jR8-c0-GaV"/>
+                            <constraint firstItem="Vev-pw-QLE" firstAttribute="top" secondItem="G0I-Ub-KDE" secondAttribute="top" constant="120" id="p1y-Uv-Ag8"/>
+                            <constraint firstItem="OZR-xn-oOj" firstAttribute="leading" secondItem="G0I-Ub-KDE" secondAttribute="leading" constant="130" id="r8h-C1-FV6"/>
+                            <constraint firstItem="V0p-qp-N6y" firstAttribute="leading" secondItem="G0I-Ub-KDE" secondAttribute="leading" constant="70" id="tMq-s1-dtn"/>
+                            <constraint firstItem="G0I-Ub-KDE" firstAttribute="trailing" secondItem="OZR-xn-oOj" secondAttribute="trailing" constant="130" id="tMy-do-Igc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="G0I-Ub-KDE"/>
+                    </view>
+                    <connections>
+                        <outlet property="saveDataEnterName" destination="V0p-qp-N6y" id="Ss6-v7-rN9"/>
+                        <outlet property="saveDataNoButtonTitle" destination="8qm-oA-frk" id="UgJ-4X-oTr"/>
+                        <segue destination="GdX-sk-wT5" kind="unwind" identifier="exitUserDataSegue" unwindAction="unwindToEnterDrinkController:" id="Guf-se-zwn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qt2-kn-oBp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1715.9420289855075" y="-510.26785714285711"/>
+        </scene>
         <!--Enter Drink Controller-->
         <scene sceneID="Vof-Zj-OuV">
             <objects>
@@ -169,6 +242,19 @@
                     <view key="view" contentMode="scaleToFill" id="8R3-lH-HYc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yqe-iH-c1O">
+                                <rect key="frame" x="124" y="186" width="197" height="180"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="Print">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="printButton:" destination="LFb-He-W2c" eventType="touchUpInside" id="JqI-tJ-CTb"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="hkW-f6-VG0"/>
@@ -176,8 +262,9 @@
                     <navigationItem key="navigationItem" id="Obn-sg-Kmi"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pUH-RC-06G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="GdX-sk-wT5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2417" y="-1177"/>
+            <point key="canvasLocation" x="2415.9420289855075" y="-1177.2321428571429"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="4WA-S0-PbQ">

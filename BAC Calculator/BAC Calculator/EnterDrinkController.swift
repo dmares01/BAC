@@ -13,9 +13,16 @@ class EnterDrinkController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        print(userData.bodyWeight)
     }
-
+    func printAll(){
+        print(userData.name)
+        print(userData.bodyWeight)
+        print(userData.age)
+        print(userData.sex)
+    }
+    @IBAction func printButton(_ sender: Any) {
+        printAll()
+    }
     /*
     // MARK: - Navigation
 
@@ -25,5 +32,5 @@ class EnterDrinkController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func unwindToEnterDrinkController(_ unwindSegue: UIStoryboardSegue) {}
 }
