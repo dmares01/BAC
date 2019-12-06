@@ -26,7 +26,7 @@ init(name: String, amountOfAlcohol: Double, typeOfAlcohol: String,
     
 }
 
-var beers: [DrinkInfo] = [
+var drinks: [DrinkInfo] = [
     
     //Light Beers
     DrinkInfo(name: "Bud Light",amountOfAlcohol: 12, typeOfAlcohol: "Beer", percentOfAlcohol: 4.2 ),
@@ -208,31 +208,31 @@ var beers: [DrinkInfo] = [
     
     
     //Wine
-    DrinkInfo(name: "Pinot Nior",amountOfAlcohol: 1, typeOfAlcohol: "Wine", percentOfAlcohol: 13),
-    DrinkInfo(name: "Chardonnay",amountOfAlcohol: 1, typeOfAlcohol: "Wine", percentOfAlcohol: 14),
-    DrinkInfo(name: "Cabernet Sauvignon",amountOfAlcohol: 1, typeOfAlcohol: "Wine", percentOfAlcohol: 14),
-    DrinkInfo(name: "Sauvignon Blanc",amountOfAlcohol: 1, typeOfAlcohol: "Wine", percentOfAlcohol: 13),
-    DrinkInfo(name: "Riesling",amountOfAlcohol: 1, typeOfAlcohol: "Wine", percentOfAlcohol: 7.5),
-    DrinkInfo(name: "Merlot",amountOfAlcohol: 1, typeOfAlcohol: "Wine", percentOfAlcohol: 13),
-    DrinkInfo(name: "Syrah",amountOfAlcohol: 1, typeOfAlcohol: "Wine", percentOfAlcohol: 14.5),
-    DrinkInfo(name: "Gewurztraminer",amountOfAlcohol: 1, typeOfAlcohol: "Wine", percentOfAlcohol: 13),
-    DrinkInfo(name: "Malbec",amountOfAlcohol: 1, typeOfAlcohol: "Wine", percentOfAlcohol: 14),
-    DrinkInfo(name: "Pinot Grigio",amountOfAlcohol: 1, typeOfAlcohol: "Wine", percentOfAlcohol: 12.5),
-    DrinkInfo(name: "Grenache",amountOfAlcohol: 1, typeOfAlcohol: "Wine", percentOfAlcohol: 15),
-    DrinkInfo(name: "Rose",amountOfAlcohol: 1, typeOfAlcohol: "Wine", percentOfAlcohol: 13),
-    DrinkInfo(name: "Champagne",amountOfAlcohol: 1, typeOfAlcohol: "Wine", percentOfAlcohol: 13),
-    DrinkInfo(name: "Zinfandel",amountOfAlcohol: 1, typeOfAlcohol: "Wine", percentOfAlcohol: 15),
-    DrinkInfo(name: "Brunello",amountOfAlcohol: 1, typeOfAlcohol: "Wine", percentOfAlcohol: 13),
-    DrinkInfo(name: "Chianti",amountOfAlcohol: 1, typeOfAlcohol: "Wine", percentOfAlcohol: 13),
-    DrinkInfo(name: "Claret",amountOfAlcohol: 1, typeOfAlcohol: "Wine", percentOfAlcohol: 13),
-    DrinkInfo(name: "Madeira",amountOfAlcohol: 1, typeOfAlcohol: "Wine", percentOfAlcohol: 18),
-    DrinkInfo(name: "Mead",amountOfAlcohol: 1, typeOfAlcohol: "Wine", percentOfAlcohol: 13),
-    DrinkInfo(name: "Moscato",amountOfAlcohol: 1, typeOfAlcohol: "Wine", percentOfAlcohol: 6),
-    DrinkInfo(name: "Pinot Blanc",amountOfAlcohol: 1, typeOfAlcohol: "Wine", percentOfAlcohol: 13),
-    DrinkInfo(name: "Pinot Gris",amountOfAlcohol: 1, typeOfAlcohol: "Wine", percentOfAlcohol: 13),
-    DrinkInfo(name: "Port",amountOfAlcohol: 1, typeOfAlcohol: "Wine", percentOfAlcohol: 18),
-    DrinkInfo(name: "Dessert",amountOfAlcohol: 1, typeOfAlcohol: "Wine", percentOfAlcohol: 14.5),
-    DrinkInfo(name: "Sherry",amountOfAlcohol: 1, typeOfAlcohol: "Wine", percentOfAlcohol: 18),
+    DrinkInfo(name: "Pinot Nior",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 13),
+    DrinkInfo(name: "Chardonnay",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 14),
+    DrinkInfo(name: "Cabernet Sauvignon",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 14),
+    DrinkInfo(name: "Sauvignon Blanc",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 13),
+    DrinkInfo(name: "Riesling",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 7.5),
+    DrinkInfo(name: "Merlot",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 13),
+    DrinkInfo(name: "Syrah",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 14.5),
+    DrinkInfo(name: "Gewurztraminer",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 13),
+    DrinkInfo(name: "Malbec",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 14),
+    DrinkInfo(name: "Pinot Grigio",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 12.5),
+    DrinkInfo(name: "Grenache",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 15),
+    DrinkInfo(name: "Rose",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 13),
+    DrinkInfo(name: "Champagne",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 13),
+    DrinkInfo(name: "Zinfandel",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 15),
+    DrinkInfo(name: "Brunello",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 13),
+    DrinkInfo(name: "Chianti",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 13),
+    DrinkInfo(name: "Claret",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 13),
+    DrinkInfo(name: "Madeira",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 18),
+    DrinkInfo(name: "Mead",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 13),
+    DrinkInfo(name: "Moscato",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 6),
+    DrinkInfo(name: "Pinot Blanc",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 13),
+    DrinkInfo(name: "Pinot Gris",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 13),
+    DrinkInfo(name: "Port",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 18),
+    DrinkInfo(name: "Dessert",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 14.5),
+    DrinkInfo(name: "Sherry",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 18),
     
     
     
