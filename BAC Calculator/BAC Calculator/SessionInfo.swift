@@ -16,9 +16,9 @@ struct SessionInfo {
     var sessionEndDate: Date
     
     init(drinkingTime: Double, sessionStartTime: Date, sessionEndDate: Date) {
-        self.drinkingTime = drinkingTime
-        self.sessionStartTime = sessionStartTime
-        self.sessionEndDate = sessionEndDate
+        self.drinkingTime = 0.0
+        self.sessionStartTime = Date()
+        self.sessionEndDate = Date()
     
     }
 }
