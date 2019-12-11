@@ -19,7 +19,18 @@ func calculateGenForm(user: UserInfo, drink: DrinkInfo, session: SessionInfo) ->
 }
 
 func calculateWidmarkForm(user: UserInfo, drink: DrinkInfo, session: SessionInfo) -> Double{
-    let r: Double = 0.0;
+    var r: Double = 0.0;
+    switch user.sex {
+    case 0:
+        r = 0.68
+        break
+    case 1:
+        r = 0.55
+        break
+    default:
+        r = 0.61
+        break
+    }
     let widmarkBAC: Double;
     widmarkBAC = (((drink.amountOfAlcohol * drink.percentOfAlcohol * 0.789)/(user.bodyWeight * 454 * r) * 100) - (session.drinkingTime * 0.015))
     return widmarkBAC;

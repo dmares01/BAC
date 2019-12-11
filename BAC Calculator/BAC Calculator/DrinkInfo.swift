@@ -48,6 +48,7 @@ var drinks: [DrinkInfo] = [
     DrinkInfo(name: "Michelob Light",amountOfAlcohol: 12, typeOfAlcohol: "Beer", percentOfAlcohol: 4.1),
     DrinkInfo(name: "Natural Light",amountOfAlcohol: 12, typeOfAlcohol: "Beer", percentOfAlcohol: 4.2),
     
+    
     //Lagers, Bocks and Pilsners
     
     DrinkInfo(name: "Budweiser",amountOfAlcohol: 12, typeOfAlcohol: "Beer", percentOfAlcohol: 5),

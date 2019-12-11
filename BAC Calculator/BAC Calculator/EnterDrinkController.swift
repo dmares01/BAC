@@ -8,12 +8,45 @@
 
 import UIKit
 
-class EnterDrinkController: UIViewController {
+class EnterDrinkController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return drinks.count;
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "drinkCell")
+        let defaultCell = tableView.dequeueReusableCell(withIdentifier: "drinkCell")
+        let drinkName = drinks[indexPath.row]
+        cell?.textLabel?.text = drinkName.name
+        
+        defaultCell?.textLabel!.text = "Value not Loaded"
+        return cell ?? defaultCell!
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        let drinkSelected = drinks[indexPath.row]
+        //print(drinkSelected.name)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    //MARK: - View Did Load
     var userData: UserInfo!
     override func viewDidLoad() {
         super.viewDidLoad()
+        drinkTableView.dataSource = self
+        drinkTableView.delegate = self
+        self.hoursSpentOutlet.delegate = self
         // Do any additional setup after loading the view.
     }
+    
+    
+    //print button to test user data being passed through
     func printAll(){
         print(userData.name)
         print(userData.bodyWeight)
@@ -23,14 +56,42 @@ class EnterDrinkController: UIViewController {
     @IBAction func printButton(_ sender: Any) {
         printAll()
     }
-    /*
+    
+
+    @IBOutlet var drinkTableView: UITableView!
+    
+    
+    @IBOutlet weak var hoursSpentOutlet: UITextField!
+    @IBOutlet var calculateBACButtonOutlet: UIButton!
+    @IBAction func calculateBACButton(_ sender: UIButton) {
+        
+        //need to verify hours have been entered
+        performSegue(withIdentifier: "calculateBACSegue", sender: nil)
+    }
+    
+    
+    @IBAction func hoursSpentButton(_ sender: Any) {
+        //verify number entered
+        //releaseFirstResponder
+        calculateBACButtonOutlet.isHidden = false
+    }
+    
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "calculateBACSegue"{
+        let showBACController = segue.destination as! ShowBACController
+            showBACController.finalUserData = userData
+            let drinkIndex = drinkTableView.indexPathForSelectedRow
+            let drinkCellSelected = drinks[(drinkIndex?.row)!]
+            showBACController.enteredDrinks.append(drinkCellSelected)
+        }
     }
-    */
+    
     @IBAction func unwindToEnterDrinkController(_ unwindSegue: UIStoryboardSegue) {}
 }
