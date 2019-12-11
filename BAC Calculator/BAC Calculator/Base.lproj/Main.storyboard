@@ -248,7 +248,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Hours Spent Drinking..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nms-Bp-tUg">
-                                <rect key="frame" x="70" y="668" width="274" height="34"/>
+                                <rect key="frame" x="70" y="669" width="274" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -256,30 +256,23 @@
                                 </connections>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="reQ-Dx-niJ">
-                                <rect key="frame" x="70" y="148" width="274" height="30"/>
+                                <rect key="frame" x="70" y="148" width="274" height="31"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRz-I5-DBA">
-                                        <rect key="frame" x="0.0" y="0.0" width="91.5" height="30"/>
-                                        <state key="normal" title="Beer">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvn-GW-bWv">
-                                        <rect key="frame" x="91.5" y="0.0" width="91" height="30"/>
-                                        <state key="normal" title="Liquor">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F9C-iy-8WB">
-                                        <rect key="frame" x="182.5" y="0.0" width="91.5" height="30"/>
-                                        <state key="normal" title="Wine">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        </state>
-                                    </button>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ycD-cu-uvS">
+                                        <rect key="frame" x="0.0" y="0.0" width="274" height="32"/>
+                                        <segments>
+                                            <segment title="Beer"/>
+                                            <segment title="Liquor"/>
+                                            <segment title="Wine"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="updateDrinkTable:" destination="LFb-He-W2c" eventType="valueChanged" id="aRz-kM-0yu"/>
+                                        </connections>
+                                    </segmentedControl>
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="doI-Jy-pkZ">
-                                <rect key="frame" x="70" y="198" width="274" height="450"/>
+                                <rect key="frame" x="70" y="199" width="274" height="450"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="450" id="gHH-OC-ln4"/>
@@ -296,7 +289,7 @@
                                 </prototypes>
                             </tableView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BGI-0O-3yq">
-                                <rect key="frame" x="70" y="722" width="274" height="46"/>
+                                <rect key="frame" x="70" y="723" width="274" height="46"/>
                                 <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="Calculate BAC">
@@ -307,7 +300,7 @@
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AxL-cH-B58">
-                                <rect key="frame" x="70" y="722" width="274" height="20.5"/>
+                                <rect key="frame" x="70" y="723" width="274" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -353,6 +346,7 @@
                     <navigationItem key="navigationItem" id="Obn-sg-Kmi"/>
                     <connections>
                         <outlet property="calculateBACButtonOutlet" destination="BGI-0O-3yq" id="9yu-0Z-4ln"/>
+                        <outlet property="choiceOfAlcohol" destination="ycD-cu-uvS" id="D4Z-2l-64l"/>
                         <outlet property="drinkTableView" destination="doI-Jy-pkZ" id="TgY-Hs-PI0"/>
                         <outlet property="errorMessage" destination="AxL-cH-B58" id="DBT-lf-3gG"/>
                         <outlet property="hoursSpentOutlet" destination="nms-Bp-tUg" id="p0J-Wr-Rnn"/>

@@ -9,26 +9,56 @@
 import UIKit
 
 class EnterDrinkController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    @IBOutlet var choiceOfAlcohol: UISegmentedControl!
+    @IBAction func updateDrinkTable(_ sender: UISegmentedControl) {
+        drinkTableView.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return drinks.count;
+        switch choiceOfAlcohol.selectedSegmentIndex {
+        case 0:
+            return beers.count
+        case 1:
+            return liquors.count
+        case 2:
+            return wines.count
+        default:
+            return liquors.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "drinkCell")
         let defaultCell = tableView.dequeueReusableCell(withIdentifier: "drinkCell")
-        let drinkName = drinks[indexPath.row]
-        cell?.textLabel?.text = drinkName.name
+        var drinkName: String = " "
+        switch choiceOfAlcohol.selectedSegmentIndex {
+        case 0:
+            drinkName = beers[indexPath.row].name
+            break
+        case 1:
+            drinkName = liquors[indexPath.row].name
+            break
+        case 2:
+            drinkName = wines[indexPath.row].name
+            break
+        default:
+            drinkName = beers[indexPath.row].name
+        }
+        cell?.textLabel?.text = drinkName
         
         defaultCell?.textLabel!.text = "Value not Loaded"
         return cell ?? defaultCell!
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        let drinkSelected = drinks[indexPath.row]
-        //print(drinkSelected.name)
+        
     }
+    
+    
+    
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -42,6 +72,9 @@ class EnterDrinkController: UIViewController, UITableViewDataSource, UITableView
         drinkTableView.dataSource = self
         drinkTableView.delegate = self
         self.hoursSpentOutlet.delegate = self
+        beers.sort {$0.name < $1.name}
+        liquors.sort {$0.name < $1.name}
+        wines.sort {$0.name < $1.name}
         // Do any additional setup after loading the view.
     }
     
@@ -115,7 +148,21 @@ class EnterDrinkController: UIViewController, UITableViewDataSource, UITableView
             showBACController.finalUserData = userData
             showBACController.currentSession.drinkingTime = Double(hoursSpentOutlet.text!)!;
             let drinkIndex = drinkTableView.indexPathForSelectedRow
-            let drinkCellSelected = drinks[(drinkIndex?.row)!]
+            var drinkCellSelected: DrinkInfo
+            switch choiceOfAlcohol.selectedSegmentIndex {
+            case 0:
+                drinkCellSelected = beers[(drinkIndex?.row)!]
+                break
+            case 1:
+                drinkCellSelected = liquors[(drinkIndex?.row)!]
+                break
+            case 2:
+                drinkCellSelected = wines[(drinkIndex?.row)!]
+                break
+            default:
+                drinkCellSelected = beers[(drinkIndex?.row)!]
+            }
+            //let drinkCellSelected = drinks[(drinkIndex?.row)!]
             showBACController.enteredDrinks.append(drinkCellSelected)
         }
     }
