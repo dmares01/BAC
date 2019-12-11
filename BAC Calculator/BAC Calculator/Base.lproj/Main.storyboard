@@ -177,7 +177,7 @@
                                 <rect key="frame" x="130" y="264" width="154" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="Yes">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="saveDataYesButton:" destination="0sM-wa-Egq" eventType="touchUpInside" id="eCE-2b-CHr"/>
@@ -187,7 +187,7 @@
                                 <rect key="frame" x="130" y="340" width="154" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="No">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="saveDataNoButton:" destination="0sM-wa-Egq" eventType="touchUpInside" id="ArJ-N7-icS"/>

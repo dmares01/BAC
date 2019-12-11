@@ -14,10 +14,12 @@ import Foundation
                         // r = 0.55 for women and 0.68 for men and 0.61 for other
 
 func calculateGenForm(user: UserInfo, drink: DrinkInfo, session: SessionInfo) -> Double{
-    let genFormBAC: Double = (drink.amountOfAlcohol * drink.percentOfAlcohol * 0.075) / (user.bodyWeight - session.drinkingTime * 0.015)
+    let genFormBAC: Double;
+    genFormBAC = ((drink.amountOfAlcohol * drink.percentOfAlcohol * 0.075)/user.bodyWeight - (session.drinkingTime * 0.015))
     if genFormBAC < 0 {
         return 0.0
     }
+    //print(genFormBAC)
     return genFormBAC
 }
 
