@@ -15,6 +15,9 @@ import Foundation
 
 func calculateGenForm(user: UserInfo, drink: DrinkInfo, session: SessionInfo) -> Double{
     let genFormBAC: Double = (drink.amountOfAlcohol * drink.percentOfAlcohol * 0.075) / (user.bodyWeight - session.drinkingTime * 0.015)
+    if genFormBAC < 0 {
+        return 0.0
+    }
     return genFormBAC
 }
 
@@ -33,6 +36,9 @@ func calculateWidmarkForm(user: UserInfo, drink: DrinkInfo, session: SessionInfo
     }
     let widmarkBAC: Double;
     widmarkBAC = (((drink.amountOfAlcohol * drink.percentOfAlcohol * 0.789)/(user.bodyWeight * 454 * r) * 100) - (session.drinkingTime * 0.015))
+    if widmarkBAC < 0 {
+        return 0.0;
+    }
     return widmarkBAC;
 }
 

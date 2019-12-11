@@ -176,7 +176,9 @@
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZR-xn-oOj">
                                 <rect key="frame" x="130" y="264" width="154" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <state key="normal" title="Yes"/>
+                                <state key="normal" title="Yes">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
                                 <connections>
                                     <action selector="saveDataYesButton:" destination="0sM-wa-Egq" eventType="touchUpInside" id="eCE-2b-CHr"/>
                                 </connections>
@@ -184,7 +186,9 @@
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qm-oA-frk">
                                 <rect key="frame" x="130" y="340" width="154" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <state key="normal" title="No"/>
+                                <state key="normal" title="No">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
                                 <connections>
                                     <action selector="saveDataNoButton:" destination="0sM-wa-Egq" eventType="touchUpInside" id="ArJ-N7-icS"/>
                                 </connections>
@@ -302,6 +306,12 @@
                                     <action selector="calculateBACButton:" destination="LFb-He-W2c" eventType="touchUpInside" id="An9-9k-vdN"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AxL-cH-B58">
+                                <rect key="frame" x="70" y="722" width="274" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yqe-iH-c1O">
                                 <rect key="frame" x="124" y="186" width="197" height="180"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -322,11 +332,14 @@
                             <constraint firstItem="reQ-Dx-niJ" firstAttribute="top" secondItem="hkW-f6-VG0" secondAttribute="top" constant="60" id="BRT-ap-xEH"/>
                             <constraint firstItem="hkW-f6-VG0" firstAttribute="trailing" secondItem="BGI-0O-3yq" secondAttribute="trailing" constant="70" id="U8I-GB-XqU"/>
                             <constraint firstItem="hkW-f6-VG0" firstAttribute="trailing" secondItem="nms-Bp-tUg" secondAttribute="trailing" constant="70" id="WEK-xq-2Dt"/>
+                            <constraint firstItem="AxL-cH-B58" firstAttribute="top" secondItem="nms-Bp-tUg" secondAttribute="bottom" constant="20" id="eUj-Mk-eYr"/>
                             <constraint firstItem="reQ-Dx-niJ" firstAttribute="leading" secondItem="hkW-f6-VG0" secondAttribute="leading" constant="70" id="fwc-uV-BM1"/>
                             <constraint firstItem="hkW-f6-VG0" firstAttribute="trailing" secondItem="reQ-Dx-niJ" secondAttribute="trailing" constant="70" id="h0o-7r-Da3"/>
                             <constraint firstItem="BGI-0O-3yq" firstAttribute="leading" secondItem="hkW-f6-VG0" secondAttribute="leading" constant="70" id="iRR-G1-lVx"/>
                             <constraint firstItem="nms-Bp-tUg" firstAttribute="leading" secondItem="hkW-f6-VG0" secondAttribute="leading" constant="70" id="si8-oo-oX2"/>
                             <constraint firstItem="doI-Jy-pkZ" firstAttribute="leading" secondItem="hkW-f6-VG0" secondAttribute="leading" constant="70" id="u73-I9-M0s"/>
+                            <constraint firstItem="hkW-f6-VG0" firstAttribute="trailing" secondItem="AxL-cH-B58" secondAttribute="trailing" constant="70" id="vON-cf-kre"/>
+                            <constraint firstItem="AxL-cH-B58" firstAttribute="leading" secondItem="hkW-f6-VG0" secondAttribute="leading" constant="70" id="wP3-yD-WKX"/>
                             <constraint firstItem="hkW-f6-VG0" firstAttribute="trailing" secondItem="doI-Jy-pkZ" secondAttribute="trailing" constant="70" id="xyx-wV-tT7"/>
                             <constraint firstItem="doI-Jy-pkZ" firstAttribute="top" secondItem="reQ-Dx-niJ" secondAttribute="bottom" constant="20" id="zgf-GX-4cC"/>
                         </constraints>
@@ -341,6 +354,7 @@
                     <connections>
                         <outlet property="calculateBACButtonOutlet" destination="BGI-0O-3yq" id="9yu-0Z-4ln"/>
                         <outlet property="drinkTableView" destination="doI-Jy-pkZ" id="TgY-Hs-PI0"/>
+                        <outlet property="errorMessage" destination="AxL-cH-B58" id="DBT-lf-3gG"/>
                         <outlet property="hoursSpentOutlet" destination="nms-Bp-tUg" id="p0J-Wr-Rnn"/>
                         <segue destination="3uE-rt-2Du" kind="show" identifier="calculateBACSegue" id="LY1-5g-KKp"/>
                     </connections>
@@ -476,7 +490,7 @@
         <scene sceneID="4V5-Mg-I1v">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lvr-im-Nqw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Calculate" image="pencil" selectedImage="pencil" id="fVk-3O-p1r"/>
+                    <tabBarItem key="tabBarItem" title="Calculate" image="calculator" selectedImage="calculator" id="fVk-3O-p1r"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mlJ-Mn-Qsj">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -493,6 +507,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="pencil" width="64" height="56"/>
+        <image name="calculator" width="25" height="25"/>
     </resources>
 </document>

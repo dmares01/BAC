@@ -68,12 +68,38 @@ class EnterDrinkController: UIViewController, UITableViewDataSource, UITableView
         //need to verify hours have been entered
         performSegue(withIdentifier: "calculateBACSegue", sender: nil)
     }
+    @IBOutlet var errorMessage: UILabel!
     
+    fileprivate func validate(_ textField: UITextField) ->(Bool, String?){
+        guard let text = textField.text else {
+            return (false, nil)
+        }
+        if text.count >= 1{
+            return(true, "Please make sure to select pounds or kilograms")
+        }
+//        else if text.count == 0{
+//            return(false, "Please enter the number of hours drinking")
+//        }
+        else{
+            return(false, "This field can not be empty")
+        }
+    }
     
     @IBAction func hoursSpentButton(_ sender: Any) {
         //verify number entered
         //releaseFirstResponder
-        calculateBACButtonOutlet.isHidden = false
+        let (valid, message) = validate(hoursSpentOutlet)
+        if valid {
+            calculateBACButtonOutlet.isHidden = false;
+            errorMessage.isHidden = true;
+        }
+        else{
+            calculateBACButtonOutlet.isHidden = true;
+            errorMessage.isHidden = false;
+            errorMessage.text = message;
+        }
+        
+        
     }
     
     
@@ -87,6 +113,7 @@ class EnterDrinkController: UIViewController, UITableViewDataSource, UITableView
         if segue.identifier == "calculateBACSegue"{
         let showBACController = segue.destination as! ShowBACController
             showBACController.finalUserData = userData
+            showBACController.currentSession.drinkingTime = Double(hoursSpentOutlet.text!)!;
             let drinkIndex = drinkTableView.indexPathForSelectedRow
             let drinkCellSelected = drinks[(drinkIndex?.row)!]
             showBACController.enteredDrinks.append(drinkCellSelected)
