@@ -81,9 +81,25 @@ class EnterDrinkController: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let favoriteAction = UIContextualAction(style: .normal, title: "Favorite") { (action, view, handler) in
-            
-            
+            let favDrinkIndex = self.drinkTableView.indexPathForSelectedRow
+            var favDrinkCellSelected: DrinkInfo
+            switch self.choiceOfAlcohol.selectedSegmentIndex {
+            case 0:
+                favDrinkCellSelected = beers[(favDrinkIndex?.row)!]
+                break
+            case 1:
+                favDrinkCellSelected = liquors[(favDrinkIndex?.row)!]
+                break
+            case 2:
+                favDrinkCellSelected = wines[(favDrinkIndex?.row)!]
+                break
+            default:
+                favDrinkCellSelected = beers[(favDrinkIndex?.row)!]
+            }
+            favorites.append(favDrinkCellSelected)
             print("Add favorite Tapped")
+            handler(true)
+            
         }
         favoriteAction.backgroundColor = .blue
         let favoriteconfiguration = UISwipeActionsConfiguration(actions: [favoriteAction])
@@ -197,6 +213,7 @@ class EnterDrinkController: UIViewController, UITableViewDataSource, UITableView
             }
             //let drinkCellSelected = drinks[(drinkIndex?.row)!]
             showBACController.enteredDrinks.append(drinkCellSelected)
+            recents.append(drinkCellSelected)
         }
     }
     

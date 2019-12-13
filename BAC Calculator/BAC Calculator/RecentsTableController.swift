@@ -1,5 +1,5 @@
 //
-//  FavoritesTableController.swift
+//  RecentsTableController.swift
 //  BAC Calculator
 //
 //  Created by Live the Fourth on 12/13/19.
@@ -8,11 +8,12 @@
 
 import UIKit
 
-class FavoritesTableController: UITableViewController {
-
+class RecentsTableController: UITableViewController {
+    @IBOutlet var recentsTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.reloadData()
+        recentsTableView.reloadData()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -24,25 +25,20 @@ class FavoritesTableController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return favorites.count
+        return recents.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "favoritesCell", for: indexPath)
-        
-        cell.textLabel?.text = favorites[indexPath.row].name
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "recentsCell", for: indexPath)
+
+        cell.textLabel?.text = recents[indexPath.row].name
 
         return cell
     }
-    
 
     /*
     // Override to support conditional editing of the table view.
@@ -52,19 +48,17 @@ class FavoritesTableController: UITableViewController {
     }
     */
 
-    
+    /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            favorites.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-            
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    
+    */
 
     /*
     // Override to support rearranging the table view.
