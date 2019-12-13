@@ -78,34 +78,7 @@ class EnterDrinkController: UIViewController, UITableViewDataSource, UITableView
         return [favoriteAction]
     }*/
     
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        
-        let favoriteAction = UIContextualAction(style: .normal, title: "Favorite") { (action, view, handler) in
-            let favDrinkIndex = self.drinkTableView.indexPathForSelectedRow
-            var favDrinkCellSelected: DrinkInfo
-            switch self.choiceOfAlcohol.selectedSegmentIndex {
-            case 0:
-                favDrinkCellSelected = beers[(favDrinkIndex?.row)!]
-                break
-            case 1:
-                favDrinkCellSelected = liquors[(favDrinkIndex?.row)!]
-                break
-            case 2:
-                favDrinkCellSelected = wines[(favDrinkIndex?.row)!]
-                break
-            default:
-                favDrinkCellSelected = beers[(favDrinkIndex?.row)!]
-            }
-            favorites.append(favDrinkCellSelected)
-            print("Add favorite Tapped")
-            handler(true)
-            
-        }
-        favoriteAction.backgroundColor = .blue
-        let favoriteconfiguration = UISwipeActionsConfiguration(actions: [favoriteAction])
-        return favoriteconfiguration
-        
-    }
+    
     
 
     
@@ -215,6 +188,39 @@ class EnterDrinkController: UIViewController, UITableViewDataSource, UITableView
             showBACController.enteredDrinks.append(drinkCellSelected)
         }
     }
-    
+   
     @IBAction func unwindToEnterDrinkController(_ unwindSegue: UIStoryboardSegue) {}
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let favoriteAction = UIContextualAction(style: .normal, title: "Favorite", handler:  { (action, view, completionHandler) in
+            let favDrinkIndex = indexPath.row
+            var favDrinkCellSelected: DrinkInfo
+            print(indexPath.row)
+           // print(favDrinkCellSelected)
+            switch self.choiceOfAlcohol.selectedSegmentIndex {
+            case 0:
+                favDrinkCellSelected = beers[favDrinkIndex]
+                break
+            case 1:
+                favDrinkCellSelected = liquors[favDrinkIndex]
+                break
+            case 2:
+                favDrinkCellSelected = wines[favDrinkIndex]
+                break
+            default:
+                favDrinkCellSelected = beers[favDrinkIndex]
+            }
+            favorites.append(favDrinkCellSelected)
+            print("Add favorite Tapped")
+            completionHandler(true)
+        })
+        favoriteAction.backgroundColor = .blue
+        let favoriteconfiguration = UISwipeActionsConfiguration(actions: [favoriteAction])
+        return favoriteconfiguration
+        
+    }
+    
 }
+
+
