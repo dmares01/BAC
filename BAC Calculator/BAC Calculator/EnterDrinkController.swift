@@ -213,6 +213,7 @@ class EnterDrinkController: UIViewController, UITableViewDataSource, UITableView
             }
             //let drinkCellSelected = drinks[(drinkIndex?.row)!]
             showBACController.enteredDrinks.append(drinkCellSelected)
+            recents.append(drinkCellSelected)
         }
     }
     
