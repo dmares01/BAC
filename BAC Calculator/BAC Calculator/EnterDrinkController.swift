@@ -57,8 +57,41 @@ class EnterDrinkController: UIViewController, UITableViewDataSource, UITableView
         
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
     
+    /*func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?
+    {
+        // 1
+        let favoriteAction = UITableViewRowAction(style: .default, title: "Favorite" , handler: { (action:UITableViewRowAction, indexPath: IndexPath) -> Void in
+            
+             let favoriteMenu = UIAlertController(title: nil, message: "Add to Favorites", preferredStyle: .actionSheet)
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            
+            favoriteMenu.addAction(cancelAction)
+            
+            self.present(favoriteMenu, animated: true, completion: nil)
+        })
+        
+        return [favoriteAction]
+    }*/
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let favoriteAction = UIContextualAction(style: .normal, title: "Favorite") { (action, view, handler) in
+            
+            
+            print("Add favorite Tapped")
+        }
+        favoriteAction.backgroundColor = .blue
+        let favoriteconfiguration = UISwipeActionsConfiguration(actions: [favoriteAction])
+        return favoriteconfiguration
+        
+    }
+    
+
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()

@@ -239,7 +239,5 @@ var wines: [DrinkInfo] = [
     DrinkInfo(name: "Port",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 18),
     DrinkInfo(name: "Dessert",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 14.5),
     DrinkInfo(name: "Sherry",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 18),
-]
 
-    
 
