@@ -19,6 +19,9 @@ func calculateGenForm(user: UserInfo, drink: DrinkInfo, session: SessionInfo) ->
     if genFormBAC < 0 {
         return 0.0
     }
+    else if genFormBAC > 1{
+        return 1.0
+    }
     //print(genFormBAC)
     return genFormBAC
 }
@@ -40,6 +43,9 @@ func calculateWidmarkForm(user: UserInfo, drink: DrinkInfo, session: SessionInfo
     widmarkBAC = (((drink.amountOfAlcohol * drink.percentOfAlcohol * 0.789)/(user.bodyWeight * 454 * r) * 100) - (session.drinkingTime * 0.015))
     if widmarkBAC < 0 {
         return 0.0;
+    }
+    else if widmarkBAC > 1{
+        return 1.0
     }
     return widmarkBAC;
 }
