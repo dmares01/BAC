@@ -257,7 +257,7 @@
                                     </segmentedControl>
                                 </subviews>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="doI-Jy-pkZ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="doI-Jy-pkZ">
                                 <rect key="frame" x="70" y="199" width="274" height="450"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -425,8 +425,8 @@
                     <connections>
                         <segue destination="Lvr-im-Nqw" kind="relationship" relationship="viewControllers" id="4Pd-Et-9Qw"/>
                         <segue destination="j8q-Sh-bXC" kind="relationship" relationship="viewControllers" id="zcb-e9-0QB"/>
-                        <segue destination="a8k-v4-FKX" kind="relationship" relationship="viewControllers" id="P2P-XP-RQX"/>
                         <segue destination="tNf-XA-q8h" kind="relationship" relationship="viewControllers" id="vjJ-R5-ENv"/>
+                        <segue destination="a8k-v4-FKX" kind="relationship" relationship="viewControllers" id="P2P-XP-RQX"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8bT-pP-UXI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
