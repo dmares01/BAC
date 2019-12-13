@@ -61,26 +61,35 @@ class EnterDrinkController: UIViewController, UITableViewDataSource, UITableView
         return true
     }
     
-    /*func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?
-    {
-        // 1
-        let favoriteAction = UITableViewRowAction(style: .default, title: "Favorite" , handler: { (action:UITableViewRowAction, indexPath: IndexPath) -> Void in
-            
-             let favoriteMenu = UIAlertController(title: nil, message: "Add to Favorites", preferredStyle: .actionSheet)
-            
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-            
-            favoriteMenu.addAction(cancelAction)
-            
-            self.present(favoriteMenu, animated: true, completion: nil)
-        })
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        return [favoriteAction]
-    }*/
+        let favoriteAction = UIContextualAction(style: .normal, title: "Favorite", handler:  { (action, view, completionHandler) in
+            let favDrinkIndex = indexPath.row
+            var favDrinkCellSelected: DrinkInfo
+            //print(indexPath.row)
+            switch self.choiceOfAlcohol.selectedSegmentIndex {
+            case 0:
+                favDrinkCellSelected = beers[favDrinkIndex]
+                break
+            case 1:
+                favDrinkCellSelected = liquors[favDrinkIndex]
+                break
+            case 2:
+                favDrinkCellSelected = wines[favDrinkIndex]
+                break
+            default:
+                favDrinkCellSelected = beers[favDrinkIndex]
+            }
+            favorites.append(favDrinkCellSelected)
+            print("Add favorite Tapped")
+            completionHandler(true)
+        })
+        favoriteAction.backgroundColor = .blue
+        let favoriteconfiguration = UISwipeActionsConfiguration(actions: [favoriteAction])
+        return favoriteconfiguration
+        
+    }
     
-    
-    
-
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -129,12 +138,10 @@ class EnterDrinkController: UIViewController, UITableViewDataSource, UITableView
         guard let text = textField.text else {
             return (false, nil)
         }
+    
         if text.count >= 1{
             return(true, "Please make sure to select pounds or kilograms")
         }
-//        else if text.count == 0{
-//            return(false, "Please enter the number of hours drinking")
-//        }
         else{
             return(false, "This field can not be empty")
         }
@@ -192,35 +199,7 @@ class EnterDrinkController: UIViewController, UITableViewDataSource, UITableView
    
     @IBAction func unwindToEnterDrinkController(_ unwindSegue: UIStoryboardSegue) {}
     
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        
-        let favoriteAction = UIContextualAction(style: .normal, title: "Favorite", handler:  { (action, view, completionHandler) in
-            let favDrinkIndex = indexPath.row
-            var favDrinkCellSelected: DrinkInfo
-            print(indexPath.row)
-           // print(favDrinkCellSelected)
-            switch self.choiceOfAlcohol.selectedSegmentIndex {
-            case 0:
-                favDrinkCellSelected = beers[favDrinkIndex]
-                break
-            case 1:
-                favDrinkCellSelected = liquors[favDrinkIndex]
-                break
-            case 2:
-                favDrinkCellSelected = wines[favDrinkIndex]
-                break
-            default:
-                favDrinkCellSelected = beers[favDrinkIndex]
-            }
-            favorites.append(favDrinkCellSelected)
-            print("Add favorite Tapped")
-            completionHandler(true)
-        })
-        favoriteAction.backgroundColor = .blue
-        let favoriteconfiguration = UISwipeActionsConfiguration(actions: [favoriteAction])
-        return favoriteconfiguration
-        
-    }
+    
     
 }
 
