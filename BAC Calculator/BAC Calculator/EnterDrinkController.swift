@@ -140,7 +140,19 @@ class EnterDrinkController: UIViewController, UITableViewDataSource, UITableView
         }
     
         if text.count >= 1{
-            return(true, "Please make sure to select pounds or kilograms")
+            let numArray: Set<Character> = [".", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+            var noNumber: Bool = false
+            text.forEach{char in
+                if !numArray.contains(char) {
+                    noNumber = true
+                }
+            }
+            if noNumber{
+                return(false, "Please enter a number")
+            }
+            else{
+                return(true, "Please make sure to select pounds or kilograms")
+            }
         }
         else{
             return(false, "This field can not be empty")

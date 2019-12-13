@@ -49,7 +49,6 @@ class CalculateController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         print("Prompted for user data")
         enterDrinksButton.layer.cornerRadius = 20;
         enterDrinksButton.frame = CGRect(x: 100, y: 100, width: 60, height: 20);
-        
         agePickerData = []
         for i in 21...100{
             agePickerData.append(i)
