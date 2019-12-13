@@ -26,7 +26,7 @@ init(name: String, amountOfAlcohol: Double, typeOfAlcohol: String,
     
 }
 
-var drinks: [DrinkInfo] = [
+var beers: [DrinkInfo] = [
     
     //Light Beers
     DrinkInfo(name: "Bud Light",amountOfAlcohol: 12, typeOfAlcohol: "Beer", percentOfAlcohol: 4.2 ),
@@ -74,9 +74,10 @@ var drinks: [DrinkInfo] = [
     DrinkInfo(name: "Red's Apple Ale",amountOfAlcohol: 12, typeOfAlcohol: "Beer", percentOfAlcohol: 5),
     DrinkInfo(name: "White Claw",amountOfAlcohol: 12, typeOfAlcohol: "Beer", percentOfAlcohol: 5),
     DrinkInfo(name: "Truly",amountOfAlcohol: 12, typeOfAlcohol: "Beer", percentOfAlcohol: 5),
+    ]
     
-    
-    //Genaric Liquor
+var liquors: [DrinkInfo] = [
+    //Generic Liquor
     
     DrinkInfo(name: "Vodka",amountOfAlcohol: 1, typeOfAlcohol: "Vodka", percentOfAlcohol: 40),
     DrinkInfo(name: "Gin",amountOfAlcohol: 1, typeOfAlcohol: "Gin", percentOfAlcohol: 40),
@@ -205,8 +206,12 @@ var drinks: [DrinkInfo] = [
     DrinkInfo(name: "Southern Commfort",amountOfAlcohol: 1, typeOfAlcohol: "Liqueur", percentOfAlcohol: 35),
     DrinkInfo(name: "St. Germain",amountOfAlcohol: 1, typeOfAlcohol: "Liqueur", percentOfAlcohol: 20),
     DrinkInfo(name: "Triple Sec",amountOfAlcohol: 1, typeOfAlcohol: "Liqueur", percentOfAlcohol: 30),
+    ]
     
-    
+
+
+
+var wines: [DrinkInfo] = [
     
     //Wine
     DrinkInfo(name: "Pinot Nior",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 13),
@@ -234,13 +239,7 @@ var drinks: [DrinkInfo] = [
     DrinkInfo(name: "Port",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 18),
     DrinkInfo(name: "Dessert",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 14.5),
     DrinkInfo(name: "Sherry",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 18),
-    
-    
-    
-    
-    
-    
 ]
 
-    
+var favorites: [DrinkInfo] = []
 
