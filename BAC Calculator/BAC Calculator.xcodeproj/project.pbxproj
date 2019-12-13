@@ -12,6 +12,7 @@
 		30B6C93E2397F4D30057E498 /* DrinkInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B6C93D2397F4D30057E498 /* DrinkInfo.swift */; };
 		30B6C940239810F20057E498 /* SessionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B6C93F239810F20057E498 /* SessionInfo.swift */; };
 		6E0C4A2123A402C900F0E7DE /* FavoritesTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0C4A2023A402C900F0E7DE /* FavoritesTableController.swift */; };
+		6E0C4A2323A4190A00F0E7DE /* RecentsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0C4A2223A4190A00F0E7DE /* RecentsTableController.swift */; };
 		6E83F036238CA21900F87C82 /* CalculateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E83F035238CA21900F87C82 /* CalculateController.swift */; };
 		6EB577AF239AC0600098C4D0 /* SaveDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB577AE239AC0600098C4D0 /* SaveDataViewController.swift */; };
 		6EB577B3239B071C0098C4D0 /* ShowBACController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB577B2239B071C0098C4D0 /* ShowBACController.swift */; };
@@ -48,6 +49,7 @@
 		30B6C93D2397F4D30057E498 /* DrinkInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkInfo.swift; sourceTree = "<group>"; };
 		30B6C93F239810F20057E498 /* SessionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionInfo.swift; sourceTree = "<group>"; };
 		6E0C4A2023A402C900F0E7DE /* FavoritesTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableController.swift; sourceTree = "<group>"; };
+		6E0C4A2223A4190A00F0E7DE /* RecentsTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentsTableController.swift; sourceTree = "<group>"; };
 		6E83F035238CA21900F87C82 /* CalculateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateController.swift; sourceTree = "<group>"; };
 		6EB577AE239AC0600098C4D0 /* SaveDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDataViewController.swift; sourceTree = "<group>"; };
 		6EB577B2239B071C0098C4D0 /* ShowBACController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowBACController.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				8CF563B123981F1B00CF3A6F /* EnterDrinkController.swift */,
 				6EB577AE239AC0600098C4D0 /* SaveDataViewController.swift */,
 				6E0C4A2023A402C900F0E7DE /* FavoritesTableController.swift */,
+				6E0C4A2223A4190A00F0E7DE /* RecentsTableController.swift */,
 			);
 			path = "BAC Calculator";
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				30B6C93C2397F3490057E498 /* UserInfo.swift in Sources */,
 				6E83F036238CA21900F87C82 /* CalculateController.swift in Sources */,
 				8C8E77F5238846B8003F8583 /* ViewController.swift in Sources */,
+				6E0C4A2323A4190A00F0E7DE /* RecentsTableController.swift in Sources */,
 				30B6C940239810F20057E498 /* SessionInfo.swift in Sources */,
 				8C8E77F1238846B8003F8583 /* AppDelegate.swift in Sources */,
 				3016A888238DFF1B009DCE18 /* CalculateBAC.swift in Sources */,

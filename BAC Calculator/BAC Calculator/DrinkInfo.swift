@@ -249,3 +249,4 @@ var favorites: [DrinkInfo] = [
     DrinkInfo(name: "Sherry",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 18),
 ]
 
+var recents: [DrinkInfo] = []

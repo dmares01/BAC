@@ -199,7 +199,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="OZR-xn-oOj" firstAttribute="top" secondItem="Vev-pw-QLE" secondAttribute="bottom" constant="64" id="F82-bC-HiT"/>
                             <constraint firstItem="G0I-Ub-KDE" firstAttribute="trailing" secondItem="Vev-pw-QLE" secondAttribute="trailing" constant="53" id="Ozb-uk-EyR"/>
@@ -425,7 +425,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="Lvr-im-Nqw" kind="relationship" relationship="viewControllers" id="4Pd-Et-9Qw"/>
-                        <segue destination="j8q-Sh-bXC" kind="relationship" relationship="viewControllers" id="zcb-e9-0QB"/>
+                        <segue destination="smW-65-Fdq" kind="relationship" relationship="viewControllers" id="Jz8-Sm-pMt"/>
                         <segue destination="tNf-XA-q8h" kind="relationship" relationship="viewControllers" id="vjJ-R5-ENv"/>
                         <segue destination="a8k-v4-FKX" kind="relationship" relationship="viewControllers" id="P2P-XP-RQX"/>
                     </connections>
@@ -440,11 +440,17 @@
                 <tableViewController storyboardIdentifier="FavoritesViewController" id="tNf-XA-q8h" customClass="FavoritesTableController" customModule="BAC_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6eN-sy-jzN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorites" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xhm-6r-fBe">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="favoritesCell" id="vRg-ci-yhg">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="72" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vRg-ci-yhg" id="SDp-WK-NvR">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -457,28 +463,51 @@
                             <outlet property="delegate" destination="tNf-XA-q8h" id="nxa-BA-wtl"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="7ZJ-K0-JxM"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="r5Q-xe-tvk"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w5r-Yn-WaT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="758" y="390"/>
+            <point key="canvasLocation" x="806" y="391"/>
         </scene>
-        <!--Recents-->
-        <scene sceneID="GUQ-Gl-4cq">
+        <!--Recents Table Controller-->
+        <scene sceneID="Hdp-lx-u86">
             <objects>
-                <viewController storyboardIdentifier="Recents" title="Recents" id="j8q-Sh-bXC" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0dt-7s-rf7">
+                <tableViewController id="smW-65-Fdq" customClass="RecentsTableController" customModule="BAC_Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LPq-D7-pY5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="dZR-Jm-yVi"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" systemItem="recents" id="58n-Km-Dqz"/>
-                    <navigationItem key="navigationItem" id="Nxv-Nh-zLE"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hY8-Gd-ZBU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recent Drinks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="V4S-OG-MKu">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="recentsCell" id="Qq1-vo-Xjk">
+                                <rect key="frame" x="0.0" y="72" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qq1-vo-Xjk" id="Y5R-Xt-PLA">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="smW-65-Fdq" id="2DA-4G-UNc"/>
+                            <outlet property="delegate" destination="smW-65-Fdq" id="LOo-nL-kdO"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" systemItem="recents" id="MSn-Y4-Je1"/>
+                    <connections>
+                        <outlet property="recentsTableView" destination="LPq-D7-pY5" id="Y4y-HB-bSG"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jvy-Op-kmC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="806" y="1184"/>
+            <point key="canvasLocation" x="787" y="1118"/>
         </scene>
         <!--More-->
         <scene sceneID="AN6-in-F1g">
