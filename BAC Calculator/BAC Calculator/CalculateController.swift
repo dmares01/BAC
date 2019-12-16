@@ -49,7 +49,6 @@ class CalculateController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         print("Prompted for user data")
         enterDrinksButton.layer.cornerRadius = 20;
         enterDrinksButton.frame = CGRect(x: 100, y: 100, width: 60, height: 20);
-        
         agePickerData = []
         for i in 21...100{
             agePickerData.append(i)
@@ -68,8 +67,20 @@ class CalculateController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         guard let text = textField.text else {
             return (false, nil)
         }
+        let numArray: Set<Character> = [".", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+        var noNumber: Bool = false
         if text.count >= 2{
-            return(true, "Please make sure to select pounds or kilograms")
+            text.forEach{char in
+                if !numArray.contains(char) {
+                    noNumber = true
+                }
+            }
+            if noNumber{
+                return(false, "Please enter a number")
+            }
+            else{
+                return(true, "Please make sure to select pounds or kilograms")
+            }
         }
         else if text.count == 1{
             return(false, "Are you sure you can legally drink?")
@@ -97,6 +108,7 @@ class CalculateController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         //need prompt to save user data in memory
         inputtedUserData.name = " "
         inputtedUserData.bodyWeight = Double(weightField.text!)!
+        //print(inputtedUserData.bodyWeight)
         inputtedUserData.sex = genderSelector.selectedSegmentIndex
         // male = 0; female = 1; other = 2
         inputtedUserData.age = (Double(agePicker.selectedRow(inComponent: 0))+21)
