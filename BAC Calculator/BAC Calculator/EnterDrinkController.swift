@@ -81,7 +81,8 @@ class EnterDrinkController: UIViewController, UITableViewDataSource, UITableView
                 favDrinkCellSelected = beers[favDrinkIndex]
             }
             favorites.append(favDrinkCellSelected)
-            print("Add favorite Tapped")
+            //print("Add favorite Tapped")
+            //print(self.userData.name)
             completionHandler(true)
         })
         favoriteAction.backgroundColor = .blue
@@ -95,6 +96,10 @@ class EnterDrinkController: UIViewController, UITableViewDataSource, UITableView
         textField.resignFirstResponder()
         return true
     }
+    
+    
+    
+    
     
     //MARK: - View Did Load
     var userData: UserInfo!
@@ -186,7 +191,7 @@ class EnterDrinkController: UIViewController, UITableViewDataSource, UITableView
         // Pass the selected object to the new view controller.
         if segue.identifier == "calculateBACSegue"{
         let showBACController = segue.destination as! ShowBACController
-            showBACController.finalUserData = userData
+            finalUserData = userData
             showBACController.currentSession.drinkingTime = Double(hoursSpentOutlet.text!)!;
             let drinkIndex = drinkTableView.indexPathForSelectedRow
             var drinkCellSelected: DrinkInfo

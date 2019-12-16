@@ -46,9 +46,15 @@ class SaveDataViewController: UIViewController, UITextFieldDelegate {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         if segue.identifier == "exitUserDataSegue"{
-                   let enterDrinkController = segue.destination as! EnterDrinkController
-            enterDrinkController.userData.name = saveDataEnterName.text ?? "User"
-               }
+            let enterDrinkController = segue.destination as! EnterDrinkController
+            if saveDataEnterName.text == nil || saveDataEnterName.text == ""{
+                enterDrinkController.userData.name = "User"
+            }
+            else{
+                enterDrinkController.userData.name = saveDataEnterName.text!
+            }
+            
+        }
         /*
          at end of session
          if userInfo.name == "User"

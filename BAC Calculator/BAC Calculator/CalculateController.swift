@@ -20,7 +20,7 @@ class CalculateController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         return String(agePickerData[row])
     }
     
-
+    //MARK: View Did Load
     override func viewDidLoad() {
         super.viewDidLoad();
         selectLoadingScreen();
@@ -30,18 +30,23 @@ class CalculateController: UIViewController, UIPickerViewDelegate, UIPickerViewD
    
     }
     
-    
     //put logic here to determine which screen to load when user opens app.
     var storedData : Bool = false
     func selectLoadingScreen(){
         
-        if !storedData{
-            //run set up screen and prompt for user data
-            promptUserData();
+        if storedUserData.object(forKey: "Name") as? String != nil{
+            //load select user screen
+            print(storedUserData.object(forKey: "Name") as! String)
+            finalUserData.name = storedUserData.object(forKey: "Name") as! String
+            finalUserData.bodyWeight = storedUserData.object(forKey: "BodyWeight") as! Double
+            finalUserData.sex = storedUserData.object(forKey: "Sex") as! Int
+            finalUserData.age = storedUserData.object(forKey: "Age") as! Double
+            performSegue(withIdentifier: "drinkSegue", sender: nil)
+            
         }
         else{
-            //load select user screen
-            loadUserDataScreen();
+            //run set up screen and prompt for user data
+            promptUserData();
         }
     }
     func promptUserData(){

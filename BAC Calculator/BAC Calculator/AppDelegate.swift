@@ -7,13 +7,14 @@
 //
 
 import UIKit
+let storedUserData = UserDefaults.standard
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
@@ -27,6 +28,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        
+        
+        //storedUserData.set(favorites, forKey: "FavoriteArray")
+        //storedUserData.set(recents, forKey: "RecentsArray")
+        storedUserData.set(finalUserData.name, forKey: "Name")
+        storedUserData.set(finalUserData.bodyWeight, forKey: "BodyWeight")
+        storedUserData.set(finalUserData.age, forKey: "Age")
+        storedUserData.set(finalUserData.sex, forKey: "Sex")
+        
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
