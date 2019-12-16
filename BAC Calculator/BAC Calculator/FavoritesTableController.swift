@@ -18,6 +18,10 @@ class FavoritesTableController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    override func viewWillAppear(_ animated: Bool) {
+        favorites.sort {$0.name < $1.name}
+        tableView.reloadData()
+    }
 
     // MARK: - Table view data source
 
