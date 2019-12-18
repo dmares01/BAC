@@ -7,7 +7,6 @@
 //
 
 import UIKit
-var finalUserData: UserInfo!
 
 class ShowBACController: UIViewController {
     var currentSession = SessionInfo(drinkingTime: 0.0, sessionStartTime: Date(), sessionEndDate: Date())

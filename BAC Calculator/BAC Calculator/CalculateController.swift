@@ -7,6 +7,7 @@
 //
 
 import UIKit
+var finalUserData = UserInfo.init(name: "User", bodyWeight: 0.0, sex: 0, age: 0.0)
 
 class CalculateController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -23,26 +24,27 @@ class CalculateController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     //MARK: View Did Load
     override func viewDidLoad() {
         super.viewDidLoad();
-        selectLoadingScreen();
         agePicker.dataSource = self;
         agePicker.delegate = self;
+        agePickerData = []
+        for i in 21...100{
+            agePickerData.append(i)
+        }
         self.weightField.delegate = self
-   
+        selectLoadingScreen();
     }
     
     //put logic here to determine which screen to load when user opens app.
     var storedData : Bool = false
     func selectLoadingScreen(){
-        
-        if storedUserData.object(forKey: "Name") as? String != nil{
+        print(storedUserData.object(forKey: "Name") as? String)
+        if storedUserData.object(forKey: "Name") as? String != nil && storedUserData.object(forKey: "Name") as? String != "User"{
             //load select user screen
-            print(storedUserData.object(forKey: "Name") as! String)
             finalUserData.name = storedUserData.object(forKey: "Name") as! String
-            finalUserData.bodyWeight = storedUserData.object(forKey: "BodyWeight") as! Double
-            finalUserData.sex = storedUserData.object(forKey: "Sex") as! Int
-            finalUserData.age = storedUserData.object(forKey: "Age") as! Double
+            finalUserData.bodyWeight = storedUserData.double(forKey: "BodyWeight")
+            finalUserData.sex = storedUserData.integer(forKey: "Sex")
+            finalUserData.age = storedUserData.double(forKey: "Age")
             performSegue(withIdentifier: "drinkSegue", sender: nil)
-            
         }
         else{
             //run set up screen and prompt for user data
@@ -54,11 +56,6 @@ class CalculateController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         print("Prompted for user data")
         enterDrinksButton.layer.cornerRadius = 20;
         enterDrinksButton.frame = CGRect(x: 100, y: 100, width: 60, height: 20);
-        agePickerData = []
-        for i in 21...100{
-            agePickerData.append(i)
-        }
-        storedData = true;
     }
     func loadUserDataScreen(){
         //hide ui elements as necessary

@@ -32,11 +32,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //storedUserData.set(favorites, forKey: "FavoriteArray")
         //storedUserData.set(recents, forKey: "RecentsArray")
-        storedUserData.set(finalUserData.name, forKey: "Name")
-        storedUserData.set(finalUserData.bodyWeight, forKey: "BodyWeight")
-        storedUserData.set(finalUserData.age, forKey: "Age")
-        storedUserData.set(finalUserData.sex, forKey: "Sex")
-        
+        if finalUserData.name != "User"{
+            storedUserData.set(finalUserData.name, forKey: "Name")
+            storedUserData.set(finalUserData.bodyWeight, forKey: "BodyWeight")
+            storedUserData.set(finalUserData.age, forKey: "Age")
+            storedUserData.set(finalUserData.sex, forKey: "Sex")
+        }
+        else{
+            storedUserData.removeObject(forKey: "Name")
+            storedUserData.removeObject(forKey: "BodyWeight")
+            storedUserData.removeObject(forKey: "Age")
+            storedUserData.removeObject(forKey: "Sex")
+        }
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {

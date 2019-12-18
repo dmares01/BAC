@@ -30,11 +30,10 @@ class SaveDataViewController: UIViewController, UITextFieldDelegate {
     @IBAction func saveDataYesButton(_ sender: Any) {
         saveDataEnterName.isHidden = false
         saveDataNoButtonTitle.setTitle("Cancel", for: .normal)
-        
-        
        }
     @IBOutlet var saveDataNoButtonTitle: UIButton!
     @IBAction func saveDataNoButton(_ sender: Any) {
+        finalUserData.name = "User"
         performSegue(withIdentifier: "exitUserDataSegue", sender: nil)
        }
 
@@ -47,13 +46,12 @@ class SaveDataViewController: UIViewController, UITextFieldDelegate {
         // Pass the selected object to the new view controller.
         if segue.identifier == "exitUserDataSegue"{
             let enterDrinkController = segue.destination as! EnterDrinkController
-            if saveDataEnterName.text == nil || saveDataEnterName.text == ""{
+            if saveDataEnterName.text == nil || saveDataEnterName.text! == ""{
                 enterDrinkController.userData.name = "User"
             }
             else{
                 enterDrinkController.userData.name = saveDataEnterName.text!
             }
-            
         }
         /*
          at end of session
