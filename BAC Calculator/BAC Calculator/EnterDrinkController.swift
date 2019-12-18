@@ -81,7 +81,8 @@ class EnterDrinkController: UIViewController, UITableViewDataSource, UITableView
                 favDrinkCellSelected = beers[favDrinkIndex]
             }
             favorites.append(favDrinkCellSelected)
-            print("Add favorite Tapped")
+            //print("Add favorite Tapped")
+            //print(self.userData.name)
             completionHandler(true)
         })
         favoriteAction.backgroundColor = .blue
@@ -96,6 +97,10 @@ class EnterDrinkController: UIViewController, UITableViewDataSource, UITableView
         return true
     }
     
+    
+    
+    
+    
     //MARK: - View Did Load
     var userData: UserInfo!
     override func viewDidLoad() {
@@ -108,20 +113,6 @@ class EnterDrinkController: UIViewController, UITableViewDataSource, UITableView
         wines.sort {$0.name < $1.name}
         // Do any additional setup after loading the view.
     }
-    
-    
-    //print button to test user data being passed through
-    func printAll(){
-        print(userData.name)
-        print(userData.bodyWeight)
-        print(userData.age)
-        print(userData.sex)
-    }
-    @IBAction func printButton(_ sender: Any) {
-        printAll()
-    }
-    
-
     @IBOutlet var drinkTableView: UITableView!
     
     
@@ -138,7 +129,6 @@ class EnterDrinkController: UIViewController, UITableViewDataSource, UITableView
         guard let text = textField.text else {
             return (false, nil)
         }
-    
         if text.count >= 1{
             let numArray: Set<Character> = [".", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
             var noNumber: Bool = false
@@ -186,7 +176,10 @@ class EnterDrinkController: UIViewController, UITableViewDataSource, UITableView
         // Pass the selected object to the new view controller.
         if segue.identifier == "calculateBACSegue"{
         let showBACController = segue.destination as! ShowBACController
-            showBACController.finalUserData = userData
+            //If data was not loaded from stored data then use data passed through segue
+            if finalUserData.bodyWeight == 0.0 {
+                finalUserData = userData
+            }
             showBACController.currentSession.drinkingTime = Double(hoursSpentOutlet.text!)!;
             let drinkIndex = drinkTableView.indexPathForSelectedRow
             var drinkCellSelected: DrinkInfo

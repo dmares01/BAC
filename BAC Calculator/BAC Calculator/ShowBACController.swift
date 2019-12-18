@@ -10,7 +10,6 @@ import UIKit
 
 class ShowBACController: UIViewController {
     var currentSession = SessionInfo(drinkingTime: 0.0, sessionStartTime: Date(), sessionEndDate: Date())
-    var finalUserData: UserInfo!
     var enteredDrinks: [DrinkInfo] = []
     override func viewDidLoad() {
         super.viewDidLoad()

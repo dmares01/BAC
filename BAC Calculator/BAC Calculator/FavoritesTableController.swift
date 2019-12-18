@@ -12,7 +12,6 @@ class FavoritesTableController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.reloadData()
 
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
@@ -23,7 +22,7 @@ class FavoritesTableController: UITableViewController {
         tableView.reloadData()
     }
 
-    // MARK: - Table view data source
+    // MARK: - Table View Functions
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections

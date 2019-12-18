@@ -10,10 +10,10 @@ import Foundation
 
 
 struct UserInfo {
-    var name: String
-    var bodyWeight: Double
-    var sex: Int
-    var age: Double
+    var name: String = "User"
+    var bodyWeight: Double = 0.0
+    var sex: Int = 0
+    var age: Double = 0.0
     
     
     init(name: String, bodyWeight: Double, sex: Int, age: Double) {
