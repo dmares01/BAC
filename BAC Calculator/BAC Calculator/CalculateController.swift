@@ -48,18 +48,7 @@ class CalculateController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         }
         else{
             //run set up screen and prompt for user data
-            promptUserData();
         }
-    }
-    func promptUserData(){
-        //hide ui elements as necessary
-        print("Prompted for user data")
-        enterDrinksButton.layer.cornerRadius = 20;
-        enterDrinksButton.frame = CGRect(x: 100, y: 100, width: 60, height: 20);
-    }
-    func loadUserDataScreen(){
-        //hide ui elements as necessary
-        print("Did not prompt for user data")
     }
     //Figure out how to get height data.
     //Two boxes for feet and inches vs one box for centimeters
@@ -125,6 +114,8 @@ class CalculateController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     @IBOutlet var weightErrorMessage: UILabel!
     //change action to add user button right away
     @IBAction func validateWeightInfo(_ sender: Any) {
+        enterDrinksButton.layer.cornerRadius = 20;
+        enterDrinksButton.frame = CGRect(x: 100, y: 100, width: 60, height: 20);
         let (valid, message) = validate(weightField)
         if valid {
             enterDrinksButton.isHidden = false;
