@@ -37,7 +37,7 @@ class CalculateController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     //put logic here to determine which screen to load when user opens app.
     var storedData : Bool = false
     func selectLoadingScreen(){
-        print(storedUserData.object(forKey: "Name") as? String)
+        //print(storedUserData.object(forKey: "Name") as? String)
         if storedUserData.object(forKey: "Name") as? String != nil && storedUserData.object(forKey: "Name") as? String != "User"{
             //load select user screen
             finalUserData.name = storedUserData.object(forKey: "Name") as! String
