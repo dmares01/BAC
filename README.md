@@ -16,10 +16,10 @@ Our goal is to use algorithms to calculate the users BAC based off of their phys
 
 ## Planned Features <br>
 1) Enter in number of drinks
-2) Save user profile, to reduce info entered each time
+2) ~~Save user profile, to reduce info entered each time~~ 
 4) Allow multiple user profiles
 5) Store past drinks for easy entering of repeat drinks
-6) Allow user to favorite drinks
+6) ~~Allow user to favorite drinks~~
 7) Easy "Reuse last drink" button to simplify entering
 8) Allow changing quantity to enter drinks in bulk
 9) Allow user to sync to contacts to quick send text or location 
