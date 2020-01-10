@@ -8,7 +8,7 @@
 
 import UIKit
 let storedUserData = UserDefaults.standard
-
+var drinkIndices: [[Int]] = [[],[],[]]
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -17,6 +17,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        if storedUserData.array(forKey: "DrinkIndices") != nil{
+            let array: [[Int]] = storedUserData.array(forKey: "DrinkIndices") as! [[Int]]
+            print(array)
+            print(favorites)
+            
+            
+            for drinkArray in 0...2{
+                var drinkIndex: Int = 0;
+                while(drinkIndex < array[drinkArray].count){
+                    switch drinkArray{
+                    case 1:
+                        favorites[1].append(liquors[drinkIndex])
+                        break;
+                    case 2:
+                        favorites[2].append(wines[drinkIndex])
+                        break;
+                    default:
+                        favorites[0].append(beers[drinkIndex])
+                        break;
+                    }
+                    drinkIndex += 1
+                }
+            }
+            print(favorites)
+            
+        }
         return true
     }
 
@@ -32,17 +58,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //storedUserData.set(favorites, forKey: "FavoriteArray")
         //storedUserData.set(recents, forKey: "RecentsArray")
+        //store array of ints that are indexes of drinks
+        
         if finalUserData.name != "User"{
+            /*
+             storing multiple users will require the use of an external database
+             One possible solution is realm. Might be worth checking out
+             Try to find a free database if possible, but not very likely
+            */
             storedUserData.set(finalUserData.name, forKey: "Name")
             storedUserData.set(finalUserData.bodyWeight, forKey: "BodyWeight")
             storedUserData.set(finalUserData.age, forKey: "Age")
             storedUserData.set(finalUserData.sex, forKey: "Sex")
+            storedUserData.set(drinkIndices, forKey: "DrinkIndices")
         }
         else{
             storedUserData.removeObject(forKey: "Name")
             storedUserData.removeObject(forKey: "BodyWeight")
             storedUserData.removeObject(forKey: "Age")
             storedUserData.removeObject(forKey: "Sex")
+            storedUserData.removeObject(forKey: "DrinkIndices")
         }
     }
 

@@ -241,12 +241,5 @@ var wines: [DrinkInfo] = [
     DrinkInfo(name: "Sherry",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 18),
 ]
 
-var favorites: [DrinkInfo] = [
-    DrinkInfo(name: "Pinot Blanc",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 13),
-    DrinkInfo(name: "Pinot Gris",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 13),
-    DrinkInfo(name: "Port",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 18),
-    DrinkInfo(name: "Dessert",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 14.5),
-    DrinkInfo(name: "Sherry",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 18),
-]
-
+var favorites: [[DrinkInfo]] = [[/*Beer*/],[/*Liquor*/],[/*Wine*/]]
 var recents: [DrinkInfo] = []
