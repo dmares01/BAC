@@ -8,7 +8,7 @@
 
 import UIKit
 let storedUserData = UserDefaults.standard
-
+var drinkIndices: [[Int]] = [[],[],[]]
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -17,6 +17,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        beers.sort {$0.name < $1.name}
+        liquors.sort {$0.name < $1.name}
+        wines.sort {$0.name < $1.name}
+        if storedUserData.array(forKey: "DrinkIndices") != nil{
+            let array: [[Int]] = storedUserData.array(forKey: "DrinkIndices") as! [[Int]]
+            print(array)
+            
+            //Drink indices are changed because arrays are sorted before being displayed
+            for drinkArray in 0...2{
+                var drinkIndex: Int = 0;
+                while(drinkIndex < array[drinkArray].count){
+                    switch drinkArray{
+                    case 1:
+                        favorites[1].append(liquors[array[1][drinkIndex]])
+                        drinkIndices[1].append(array[1][drinkIndex])
+                        break;
+                    case 2:
+                        favorites[2].append(wines[array[2][drinkIndex]])
+                        drinkIndices[2].append(array[2][drinkIndex])
+                        break;
+                    default:
+                        favorites[0].append(beers[array[0][drinkIndex]])
+                        drinkIndices[0].append(array[0][drinkIndex])
+                        break;
+                    }
+                    drinkIndex += 1
+                }
+            }
+            //print(favorites)
+            
+        }
         return true
     }
 
@@ -32,17 +63,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //storedUserData.set(favorites, forKey: "FavoriteArray")
         //storedUserData.set(recents, forKey: "RecentsArray")
+        //store array of ints that are indexes of drinks
+        
         if finalUserData.name != "User"{
+            /*
+             storing multiple users will require the use of an external database
+             One possible solution is realm. Might be worth checking out
+             Try to find a free database if possible, but not very likely
+            */
             storedUserData.set(finalUserData.name, forKey: "Name")
             storedUserData.set(finalUserData.bodyWeight, forKey: "BodyWeight")
             storedUserData.set(finalUserData.age, forKey: "Age")
             storedUserData.set(finalUserData.sex, forKey: "Sex")
+            storedUserData.set(drinkIndices, forKey: "DrinkIndices")
         }
         else{
             storedUserData.removeObject(forKey: "Name")
             storedUserData.removeObject(forKey: "BodyWeight")
             storedUserData.removeObject(forKey: "Age")
             storedUserData.removeObject(forKey: "Sex")
+            storedUserData.removeObject(forKey: "DrinkIndices")
         }
     }
 

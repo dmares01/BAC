@@ -54,13 +54,34 @@ class EnterDrinkController: UIViewController, UITableViewDataSource, UITableView
         return cell ?? defaultCell!
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        let cell: UITableViewCell = drinkTableView.cellForRow(at: indexPath)!
         
+        let (valid, message) = validate(hoursSpentOutlet)
+            if valid{
+                calculateBACButtonOutlet.isHidden = false;
+                errorMessage.isHidden = true;
+                cell.accessoryType = UITableViewCell.AccessoryType.detailDisclosureButton
+             }
+            else{
+                calculateBACButtonOutlet.isHidden = true;
+                errorMessage.isHidden = false;
+                errorMessage.text = message;
+            }
+    }
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let cell: UITableViewCell = drinkTableView.cellForRow(at: indexPath)!
+        cell.accessoryType = UITableViewCell.AccessoryType.none
+    }
+    
+    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        //print("Here is a test of the accessory button")
+        performSegue(withIdentifier: "calculateBACSegue", sender: nil)
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-    
+    //MARK: - Favorite Action
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let favoriteAction = UIContextualAction(style: .normal, title: "Favorite", handler:  { (action, view, completionHandler) in
@@ -80,9 +101,11 @@ class EnterDrinkController: UIViewController, UITableViewDataSource, UITableView
             default:
                 favDrinkCellSelected = beers[favDrinkIndex]
             }
-            favorites.append(favDrinkCellSelected)
-            //print("Add favorite Tapped")
-            //print(self.userData.name)
+            favorites[self.choiceOfAlcohol.selectedSegmentIndex] += [favDrinkCellSelected]
+            drinkIndices[self.choiceOfAlcohol.selectedSegmentIndex] += [favDrinkIndex]
+            //Now need to find way to remove drink when removed from favorites list
+
+            print(drinkIndices)
             completionHandler(true)
         })
         favoriteAction.backgroundColor = .blue
@@ -108,9 +131,7 @@ class EnterDrinkController: UIViewController, UITableViewDataSource, UITableView
         drinkTableView.dataSource = self
         drinkTableView.delegate = self
         self.hoursSpentOutlet.delegate = self
-        beers.sort {$0.name < $1.name}
-        liquors.sort {$0.name < $1.name}
-        wines.sort {$0.name < $1.name}
+        
         // Do any additional setup after loading the view.
     }
     @IBOutlet var drinkTableView: UITableView!
@@ -145,7 +166,7 @@ class EnterDrinkController: UIViewController, UITableViewDataSource, UITableView
             }
         }
         else{
-            return(false, "This field can not be empty")
+            return(false, "The hours field can not be empty")
         }
     }
     
@@ -154,7 +175,6 @@ class EnterDrinkController: UIViewController, UITableViewDataSource, UITableView
         //releaseFirstResponder
         let (valid, message) = validate(hoursSpentOutlet)
         if valid {
-            calculateBACButtonOutlet.isHidden = false;
             errorMessage.isHidden = true;
         }
         else{
@@ -196,7 +216,6 @@ class EnterDrinkController: UIViewController, UITableViewDataSource, UITableView
             default:
                 drinkCellSelected = beers[(drinkIndex?.row)!]
             }
-            //let drinkCellSelected = drinks[(drinkIndex?.row)!]
             showBACController.enteredDrinks.append(drinkCellSelected)
             recents.append(drinkCellSelected)
         }

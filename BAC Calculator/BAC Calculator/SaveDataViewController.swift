@@ -53,11 +53,6 @@ class SaveDataViewController: UIViewController, UITextFieldDelegate {
                 enterDrinkController.userData.name = saveDataEnterName.text!
             }
         }
-        /*
-         at end of session
-         if userInfo.name == "User"
-            clear data
-         */
     }
     
 

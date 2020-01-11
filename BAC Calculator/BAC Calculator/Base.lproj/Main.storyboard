@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -136,7 +137,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yiB-gS-QDj"/>
                     </view>
-                    <navigationItem key="navigationItem" id="9LO-HH-qKU"/>
+                    <navigationItem key="navigationItem" title="User Info" id="9LO-HH-qKU"/>
                     <connections>
                         <outlet property="agePicker" destination="nfb-sC-hQK" id="JM7-WR-FJg"/>
                         <outlet property="enterDrinksButton" destination="VnI-jG-zvg" id="YPH-8U-FSm"/>
@@ -225,7 +226,7 @@
             </objects>
             <point key="canvasLocation" x="1715.9420289855075" y="-510.26785714285711"/>
         </scene>
-        <!--Enter Drink Controller-->
+        <!--Select Drink-->
         <scene sceneID="Vof-Zj-OuV">
             <objects>
                 <viewController id="LFb-He-W2c" customClass="EnterDrinkController" customModule="BAC_Calculator" customModuleProvider="target" sceneMemberID="viewController">
@@ -233,43 +234,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Hours Spent Drinking..." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nms-Bp-tUg">
-                                <rect key="frame" x="70" y="634" width="274" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
-                                <connections>
-                                    <action selector="hoursSpentButton:" destination="LFb-He-W2c" eventType="editingDidEnd" id="T7R-ch-Y98"/>
-                                </connections>
-                            </textField>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="doI-Jy-pkZ">
-                                <rect key="frame" x="70" y="194" width="274" height="420"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="420" id="gHH-OC-ln4"/>
-                                </constraints>
-                                <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe left to add to Favorites" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="V7I-sC-iNx">
-                                    <rect key="frame" x="0.0" y="0.0" width="274" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" red="0.72287527926349582" green="0.72167180571527523" blue="0.74269349093264247" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="drinkCell" id="lME-Pq-Teu">
-                                        <rect key="frame" x="0.0" y="72" width="274" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lME-Pq-Teu" id="e2i-Yr-ORA">
-                                            <rect key="frame" x="0.0" y="0.0" width="274" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BGI-0O-3yq">
-                                <rect key="frame" x="70" y="688" width="274" height="46"/>
-                                <color key="backgroundColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="70" y="728" width="274" height="46"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="Calculate BAC">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -278,23 +245,71 @@
                                     <action selector="calculateBACButton:" destination="LFb-He-W2c" eventType="touchUpInside" id="An9-9k-vdN"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AxL-cH-B58">
-                                <rect key="frame" x="70" y="688" width="274" height="26.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ycD-cu-uvS">
-                                <rect key="frame" x="70" y="133" width="274" height="32"/>
-                                <segments>
-                                    <segment title="Beer"/>
-                                    <segment title="Liquor"/>
-                                    <segment title="Wine"/>
-                                </segments>
-                                <connections>
-                                    <action selector="updateDrinkTable:" destination="LFb-He-W2c" eventType="valueChanged" id="aRz-kM-0yu"/>
-                                </connections>
-                            </segmentedControl>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Y1B-qV-tjD">
+                                <rect key="frame" x="50" y="138" width="314" height="550"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Hours Spent Drinking..." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nms-Bp-tUg">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <action selector="hoursSpentButton:" destination="LFb-He-W2c" eventType="editingDidEnd" id="T7R-ch-Y98"/>
+                                        </connections>
+                                    </textField>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ycD-cu-uvS">
+                                        <rect key="frame" x="0.0" y="66.5" width="314" height="32"/>
+                                        <segments>
+                                            <segment title="Beer"/>
+                                            <segment title="Liquor"/>
+                                            <segment title="Wine"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="updateDrinkTable:" destination="LFb-He-W2c" eventType="valueChanged" id="aRz-kM-0yu"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="doI-Jy-pkZ">
+                                        <rect key="frame" x="0.0" y="130" width="314" height="420"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="420" id="gHH-OC-ln4"/>
+                                        </constraints>
+                                        <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe left to add to Favorites" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="V7I-sC-iNx">
+                                            <rect key="frame" x="0.0" y="0.0" width="314" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.72287527926349582" green="0.72167180571527523" blue="0.74269349093264247" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="drinkCell" textLabel="6ca-Vc-nyS" style="IBUITableViewCellStyleDefault" id="lME-Pq-Teu">
+                                                <rect key="frame" x="0.0" y="72" width="314" height="43.5"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lME-Pq-Teu" id="e2i-Yr-ORA">
+                                                    <rect key="frame" x="0.0" y="0.0" width="314" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6ca-Vc-nyS">
+                                                            <rect key="frame" x="16" y="0.0" width="282" height="43.5"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <gestureRecognizers/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <gestureRecognizers/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="550" id="Ld8-ao-eQq"/>
+                                </constraints>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yqe-iH-c1O">
                                 <rect key="frame" x="124" y="186" width="197" height="180"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -306,25 +321,25 @@
                                     <action selector="printButton:" destination="LFb-He-W2c" eventType="touchUpInside" id="JqI-tJ-CTb"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AxL-cH-B58">
+                                <rect key="frame" x="70" y="728" width="274" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="BGI-0O-3yq" firstAttribute="top" secondItem="nms-Bp-tUg" secondAttribute="bottom" constant="20" id="59l-BT-sMY"/>
-                            <constraint firstItem="nms-Bp-tUg" firstAttribute="top" secondItem="doI-Jy-pkZ" secondAttribute="bottom" constant="20" id="AmU-uC-VjC"/>
-                            <constraint firstItem="doI-Jy-pkZ" firstAttribute="top" secondItem="ycD-cu-uvS" secondAttribute="bottom" constant="30" id="PY8-LV-WMA"/>
-                            <constraint firstItem="ycD-cu-uvS" firstAttribute="leading" secondItem="hkW-f6-VG0" secondAttribute="leading" constant="70" id="T7B-ob-78S"/>
+                            <constraint firstItem="Y1B-qV-tjD" firstAttribute="top" secondItem="hkW-f6-VG0" secondAttribute="top" constant="50" id="1uP-xU-Ljm"/>
+                            <constraint firstItem="hkW-f6-VG0" firstAttribute="trailing" secondItem="Y1B-qV-tjD" secondAttribute="trailing" constant="50" id="LJ7-L8-Qj9"/>
+                            <constraint firstItem="Y1B-qV-tjD" firstAttribute="leading" secondItem="hkW-f6-VG0" secondAttribute="leading" constant="50" id="SE5-EG-nVB"/>
                             <constraint firstItem="hkW-f6-VG0" firstAttribute="trailing" secondItem="BGI-0O-3yq" secondAttribute="trailing" constant="70" id="U8I-GB-XqU"/>
-                            <constraint firstItem="hkW-f6-VG0" firstAttribute="trailing" secondItem="nms-Bp-tUg" secondAttribute="trailing" constant="70" id="WEK-xq-2Dt"/>
-                            <constraint firstItem="hkW-f6-VG0" firstAttribute="trailing" secondItem="ycD-cu-uvS" secondAttribute="trailing" constant="70" id="dtD-LL-mIO"/>
-                            <constraint firstItem="AxL-cH-B58" firstAttribute="top" secondItem="nms-Bp-tUg" secondAttribute="bottom" constant="20" id="eUj-Mk-eYr"/>
-                            <constraint firstItem="ycD-cu-uvS" firstAttribute="top" secondItem="hkW-f6-VG0" secondAttribute="top" constant="45" id="fBd-zo-Nb5"/>
                             <constraint firstItem="BGI-0O-3yq" firstAttribute="leading" secondItem="hkW-f6-VG0" secondAttribute="leading" constant="70" id="iRR-G1-lVx"/>
-                            <constraint firstItem="nms-Bp-tUg" firstAttribute="leading" secondItem="hkW-f6-VG0" secondAttribute="leading" constant="70" id="si8-oo-oX2"/>
-                            <constraint firstItem="doI-Jy-pkZ" firstAttribute="leading" secondItem="hkW-f6-VG0" secondAttribute="leading" constant="70" id="u73-I9-M0s"/>
                             <constraint firstItem="hkW-f6-VG0" firstAttribute="trailing" secondItem="AxL-cH-B58" secondAttribute="trailing" constant="70" id="vON-cf-kre"/>
+                            <constraint firstItem="AxL-cH-B58" firstAttribute="top" secondItem="Y1B-qV-tjD" secondAttribute="bottom" constant="40" id="vhS-Sx-c4K"/>
                             <constraint firstItem="AxL-cH-B58" firstAttribute="leading" secondItem="hkW-f6-VG0" secondAttribute="leading" constant="70" id="wP3-yD-WKX"/>
-                            <constraint firstItem="hkW-f6-VG0" firstAttribute="trailing" secondItem="doI-Jy-pkZ" secondAttribute="trailing" constant="70" id="xyx-wV-tT7"/>
+                            <constraint firstItem="BGI-0O-3yq" firstAttribute="top" secondItem="Y1B-qV-tjD" secondAttribute="bottom" constant="40" id="zrO-cu-Vi4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hkW-f6-VG0"/>
                         <variation key="default">
@@ -333,7 +348,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="Obn-sg-Kmi"/>
+                    <navigationItem key="navigationItem" title="Select Drink" id="Obn-sg-Kmi"/>
                     <connections>
                         <outlet property="calculateBACButtonOutlet" destination="BGI-0O-3yq" id="9yu-0Z-4ln"/>
                         <outlet property="choiceOfAlcohol" destination="ycD-cu-uvS" id="D4Z-2l-64l"/>
@@ -348,7 +363,7 @@
             </objects>
             <point key="canvasLocation" x="2415.9420289855075" y="-1177.2321428571429"/>
         </scene>
-        <!--ShowBAC Controller-->
+        <!--Your BAC-->
         <scene sceneID="0de-rA-pve">
             <objects>
                 <viewController storyboardIdentifier="ShowUserBAC" id="3uE-rt-2Du" customClass="ShowBACController" customModule="BAC_Calculator" customModuleProvider="target" sceneMemberID="viewController">
@@ -398,24 +413,40 @@
                                     <constraint firstAttribute="height" constant="250" id="43S-fC-nfp"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mOI-Bm-JYU">
+                                <rect key="frame" x="50" y="638" width="314" height="51"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Enter Another Drink">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="enterNewDrinkButton:" destination="3uE-rt-2Du" eventType="touchUpInside" id="Atc-P4-Ycs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="0g0-wV-eYn" firstAttribute="trailing" secondItem="mOI-Bm-JYU" secondAttribute="trailing" constant="50" id="0np-0o-cU7"/>
                             <constraint firstItem="Hex-Lq-GMV" firstAttribute="leading" secondItem="0g0-wV-eYn" secondAttribute="leading" constant="70" id="7V9-bB-MTg"/>
+                            <constraint firstItem="mOI-Bm-JYU" firstAttribute="leading" secondItem="0g0-wV-eYn" secondAttribute="leading" constant="50" id="ANf-t8-ben"/>
+                            <constraint firstItem="mOI-Bm-JYU" firstAttribute="top" secondItem="Hex-Lq-GMV" secondAttribute="bottom" constant="200" id="hWu-R3-GJj"/>
                             <constraint firstItem="0g0-wV-eYn" firstAttribute="trailing" secondItem="Hex-Lq-GMV" secondAttribute="trailing" constant="70" id="qgM-yE-nGs"/>
                             <constraint firstItem="Hex-Lq-GMV" firstAttribute="top" secondItem="0g0-wV-eYn" secondAttribute="top" constant="100" id="tea-oW-Ssb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0g0-wV-eYn"/>
                     </view>
-                    <navigationItem key="navigationItem" id="6HQ-5h-5ll"/>
+                    <navigationItem key="navigationItem" title="Your BAC" id="6HQ-5h-5ll"/>
                     <connections>
+                        <outlet property="enterNewDrinkButton" destination="mOI-Bm-JYU" id="4wd-jh-Lr0"/>
                         <outlet property="highEndLabel" destination="o8f-q8-Ay1" id="9ya-jm-jE1"/>
                         <outlet property="lowEndLabel" destination="euc-5m-imD" id="Jcr-NP-M5Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zQ8-vK-Dtk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3183" y="-1177"/>
+            <point key="canvasLocation" x="3182.608695652174" y="-1177.2321428571429"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="4WA-S0-PbQ">
