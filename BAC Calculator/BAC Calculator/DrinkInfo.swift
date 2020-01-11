@@ -1,14 +1,12 @@
-//
 //  DrinkInfo.swift
 //  BAC Calculator
 //
 //  Created by MItch on 12/4/19.
 //  Copyright © 2019 Creative Mobile Solutions. All rights reserved.
-//
 
 import Foundation
 
-
+//-MARK: Drink Struct
 struct DrinkInfo {
     var name: String
     var amountOfAlcohol: Double
@@ -22,7 +20,7 @@ init(name: String, amountOfAlcohol: Double, typeOfAlcohol: String,
     self.amountOfAlcohol = amountOfAlcohol
     self.typeOfAlcohol = typeOfAlcohol
     self.percentOfAlcohol = percentOfAlcohol
-}
+    }
     
 }
 

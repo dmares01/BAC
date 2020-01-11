@@ -17,10 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        beers.sort {$0.name < $1.name}
+        liquors.sort {$0.name < $1.name}
+        wines.sort {$0.name < $1.name}
         if storedUserData.array(forKey: "DrinkIndices") != nil{
             let array: [[Int]] = storedUserData.array(forKey: "DrinkIndices") as! [[Int]]
             print(array)
-            print(favorites)
             
             //Drink indices are changed because arrays are sorted before being displayed
             for drinkArray in 0...2{
@@ -28,22 +30,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 while(drinkIndex < array[drinkArray].count){
                     switch drinkArray{
                     case 1:
-                        favorites[1].append(liquors[drinkIndex])
-                        drinkIndices[1].append(drinkIndex)
+                        favorites[1].append(liquors[array[1][drinkIndex]])
+                        drinkIndices[1].append(array[1][drinkIndex])
                         break;
                     case 2:
-                        favorites[2].append(wines[drinkIndex])
-                        drinkIndices[2].append(drinkIndex)
+                        favorites[2].append(wines[array[2][drinkIndex]])
+                        drinkIndices[2].append(array[2][drinkIndex])
                         break;
                     default:
-                        favorites[0].append(beers[drinkIndex])
-                        drinkIndices[0].append(drinkIndex)
+                        favorites[0].append(beers[array[0][drinkIndex]])
+                        drinkIndices[0].append(array[0][drinkIndex])
                         break;
                     }
                     drinkIndex += 1
                 }
             }
-            print(favorites)
+            //print(favorites)
             
         }
         return true

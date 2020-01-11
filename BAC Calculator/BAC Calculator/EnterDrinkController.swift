@@ -131,9 +131,7 @@ class EnterDrinkController: UIViewController, UITableViewDataSource, UITableView
         drinkTableView.dataSource = self
         drinkTableView.delegate = self
         self.hoursSpentOutlet.delegate = self
-        beers.sort {$0.name < $1.name}
-        liquors.sort {$0.name < $1.name}
-        wines.sort {$0.name < $1.name}
+        
         // Do any additional setup after loading the view.
     }
     @IBOutlet var drinkTableView: UITableView!
