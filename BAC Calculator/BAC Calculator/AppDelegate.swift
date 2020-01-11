@@ -22,19 +22,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print(array)
             print(favorites)
             
-            
+            //Drink indices are changed because arrays are sorted before being displayed
             for drinkArray in 0...2{
                 var drinkIndex: Int = 0;
                 while(drinkIndex < array[drinkArray].count){
                     switch drinkArray{
                     case 1:
                         favorites[1].append(liquors[drinkIndex])
+                        drinkIndices[1].append(drinkIndex)
                         break;
                     case 2:
                         favorites[2].append(wines[drinkIndex])
+                        drinkIndices[2].append(drinkIndex)
                         break;
                     default:
                         favorites[0].append(beers[drinkIndex])
+                        drinkIndices[0].append(drinkIndex)
                         break;
                     }
                     drinkIndex += 1

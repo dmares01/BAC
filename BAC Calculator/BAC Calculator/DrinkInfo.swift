@@ -28,7 +28,7 @@ init(name: String, amountOfAlcohol: Double, typeOfAlcohol: String,
 
 var beers: [DrinkInfo] = [
     
-    //Light Beers
+    //-MARK: Light Beers
     DrinkInfo(name: "Bud Light",amountOfAlcohol: 12, typeOfAlcohol: "Beer", percentOfAlcohol: 4.2 ),
     DrinkInfo(name: "Coors Light",amountOfAlcohol: 12, typeOfAlcohol: "Beer", percentOfAlcohol: 4.2 ),
     DrinkInfo(name: "Miller Light",amountOfAlcohol: 12, typeOfAlcohol: "Beer", percentOfAlcohol: 4.2 ),
@@ -49,7 +49,7 @@ var beers: [DrinkInfo] = [
     DrinkInfo(name: "Natural Light",amountOfAlcohol: 12, typeOfAlcohol: "Beer", percentOfAlcohol: 4.2),
     
     
-    //Lagers, Bocks and Pilsners
+    //-MARK: Lagers, Bocks and Pilsners
     
     DrinkInfo(name: "Budweiser",amountOfAlcohol: 12, typeOfAlcohol: "Beer", percentOfAlcohol: 5),
     DrinkInfo(name: "Coors Banquet",amountOfAlcohol: 12, typeOfAlcohol: "Beer", percentOfAlcohol: 5),
@@ -66,7 +66,7 @@ var beers: [DrinkInfo] = [
     DrinkInfo(name: "Labatt Blue",amountOfAlcohol: 12, typeOfAlcohol: "Beer", percentOfAlcohol: 5),
     
     
-    //To be Sorted
+    //-MARK: To be Sorted
     
     DrinkInfo(name: "Blue Moon",amountOfAlcohol: 12, typeOfAlcohol: "Beer", percentOfAlcohol: 5.4),
     DrinkInfo(name: "Guinness",amountOfAlcohol: 12, typeOfAlcohol: "Beer", percentOfAlcohol: 4.2),
@@ -77,7 +77,7 @@ var beers: [DrinkInfo] = [
     ]
     
 var liquors: [DrinkInfo] = [
-    //Generic Liquor
+    //-MARK: Generic Liquor
     
     DrinkInfo(name: "Vodka",amountOfAlcohol: 1, typeOfAlcohol: "Vodka", percentOfAlcohol: 40),
     DrinkInfo(name: "Gin",amountOfAlcohol: 1, typeOfAlcohol: "Gin", percentOfAlcohol: 40),
@@ -85,7 +85,7 @@ var liquors: [DrinkInfo] = [
     DrinkInfo(name: "Tequila",amountOfAlcohol: 1, typeOfAlcohol: "Tequila", percentOfAlcohol: 40),
     DrinkInfo(name: "Whiskey",amountOfAlcohol: 1, typeOfAlcohol: "Whiskey", percentOfAlcohol: 40),
     
-    //Vodka
+    //-MARK: Vodkas
     
     DrinkInfo(name: "Smirnoff",amountOfAlcohol: 1, typeOfAlcohol: "Vodka", percentOfAlcohol: 40),
     DrinkInfo(name: "Tito's",amountOfAlcohol: 1, typeOfAlcohol: "Vodka", percentOfAlcohol: 40),
@@ -107,7 +107,7 @@ var liquors: [DrinkInfo] = [
     DrinkInfo(name: "Tattersall Vodka",amountOfAlcohol: 1, typeOfAlcohol: "Vodka", percentOfAlcohol: 40),
     
     
-    //Whiskey
+    //-MARK: Whiskey
     
     DrinkInfo(name: "Jack Daniel's",amountOfAlcohol: 1, typeOfAlcohol: "Whiskey", percentOfAlcohol: 40),
     DrinkInfo(name: "Jameson",amountOfAlcohol: 1, typeOfAlcohol: "Whiskey", percentOfAlcohol: 40),
@@ -137,7 +137,7 @@ var liquors: [DrinkInfo] = [
     DrinkInfo(name: "Wild Turkey",amountOfAlcohol: 1, typeOfAlcohol: "Whiskey", percentOfAlcohol: 50.5),
     
     
-    //Rum
+    //-MARK: Rum
     
     DrinkInfo(name: "Bacardi",amountOfAlcohol: 1, typeOfAlcohol: "Rum", percentOfAlcohol: 40),
     DrinkInfo(name: "Captain Morgan",amountOfAlcohol: 1, typeOfAlcohol: "Rum", percentOfAlcohol: 40),
@@ -153,7 +153,7 @@ var liquors: [DrinkInfo] = [
     DrinkInfo(name: "Myer's",amountOfAlcohol: 1, typeOfAlcohol: "Rum", percentOfAlcohol: 40),
     DrinkInfo(name: "Pyrat",amountOfAlcohol: 1, typeOfAlcohol: "Rum", percentOfAlcohol: 40),
     
-    //Gin
+    //-MARK: Gin
     
     
     DrinkInfo(name: "Bombay",amountOfAlcohol: 1, typeOfAlcohol: "Gin", percentOfAlcohol: 40),
@@ -171,7 +171,7 @@ var liquors: [DrinkInfo] = [
     DrinkInfo(name: "Tangueray",amountOfAlcohol: 1, typeOfAlcohol: "Gin", percentOfAlcohol: 40),
     
     
-    //Tequila
+    //-MARK: Tequila
     
     DrinkInfo(name: "Patron",amountOfAlcohol: 1, typeOfAlcohol: "Tequila", percentOfAlcohol: 40),
     DrinkInfo(name: "Jose Cuervo",amountOfAlcohol: 1, typeOfAlcohol: "Tequila", percentOfAlcohol: 40),
@@ -184,7 +184,7 @@ var liquors: [DrinkInfo] = [
     DrinkInfo(name: "Avion",amountOfAlcohol: 1, typeOfAlcohol: "Tequila", percentOfAlcohol: 40),
     DrinkInfo(name: "Sauza",amountOfAlcohol: 1, typeOfAlcohol: "Tequila", percentOfAlcohol: 40),
     
-    //Liqueurs
+    //-MARK: Liqueurs
     
     DrinkInfo(name: "Ancho Reyes",amountOfAlcohol: 1, typeOfAlcohol: "Liqueur", percentOfAlcohol: 40),
     DrinkInfo(name: "Sambuca",amountOfAlcohol: 1, typeOfAlcohol: "Liqueur", percentOfAlcohol: 38),
@@ -213,7 +213,7 @@ var liquors: [DrinkInfo] = [
 
 var wines: [DrinkInfo] = [
     
-    //Wine
+    //-MARK: Wine
     DrinkInfo(name: "Pinot Nior",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 13),
     DrinkInfo(name: "Chardonnay",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 14),
     DrinkInfo(name: "Cabernet Sauvignon",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 14),
@@ -241,5 +241,7 @@ var wines: [DrinkInfo] = [
     DrinkInfo(name: "Sherry",amountOfAlcohol: 5, typeOfAlcohol: "Wine", percentOfAlcohol: 18),
 ]
 
+
+//-MARK: Favorites/Recents
 var favorites: [[DrinkInfo]] = [[/*Beer*/],[/*Liquor*/],[/*Wine*/]]
 var recents: [DrinkInfo] = []
