@@ -68,6 +68,7 @@ class FavoritesTableController: UITableViewController {
         if editingStyle == .delete {
             //Delete the row from the data source
             favorites[indexPath.section].remove(at: indexPath.row)
+            drinkIndices[indexPath.section].remove(at: indexPath.row)
            //drinkIndices[indexPath.section].remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             
