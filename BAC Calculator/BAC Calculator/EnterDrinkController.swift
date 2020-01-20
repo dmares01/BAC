@@ -217,7 +217,8 @@ class EnterDrinkController: UIViewController, UITableViewDataSource, UITableView
                 drinkCellSelected = beers[(drinkIndex?.row)!]
             }
             showBACController.enteredDrinks.append(drinkCellSelected)
-            recents.append(drinkCellSelected)
+            recents[choiceOfAlcohol.selectedSegmentIndex] += [drinkCellSelected]
+            recentIndices[choiceOfAlcohol.selectedSegmentIndex] += [(drinkIndex?.row)!]
         }
     }
    

@@ -9,6 +9,7 @@
 import UIKit
 let storedUserData = UserDefaults.standard
 var drinkIndices: [[Int]] = [[],[],[]]
+var recentIndices: [[Int]] = [[],[],[]]
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -24,7 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let array: [[Int]] = storedUserData.array(forKey: "DrinkIndices") as! [[Int]]
             print(array)
             
-            //Drink indices are changed because arrays are sorted before being displayed
             for drinkArray in 0...2{
                 var drinkIndex: Int = 0;
                 while(drinkIndex < array[drinkArray].count){
@@ -48,6 +48,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             //print(favorites)
             
         }
+        
+        if storedUserData.array(forKey: "RecentIndices") != nil{
+            let array: [[Int]] = storedUserData.array(forKey: "RecentIndices") as! [[Int]]
+            print(recents)
+            print(array)
+            //Drink indices are changed because arrays are sorted before being displayed
+            for recentArray in 0...2{
+                var recentIndex: Int = 0;
+                while(recentIndex < array[recentArray].count){
+                    switch recentArray{
+                    case 1:
+                        recents[1].append(liquors[array[1][recentIndex]])
+                        recentIndices[1].append(array[1][recentIndex])
+                        break;
+                    case 2:
+                        recents[2].append(wines[array[2][recentIndex]])
+                        recentIndices[2].append(array[2][recentIndex])
+                        break;
+                    default:
+                        recents[0].append(beers[array[0][recentIndex]])
+                        recentIndices[0].append(array[0][recentIndex])
+                        break;
+                    }
+                    recentIndex += 1
+                }
+            }
+        }
         return true
     }
 
@@ -60,11 +87,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
         
-        
-        //storedUserData.set(favorites, forKey: "FavoriteArray")
-        //storedUserData.set(recents, forKey: "RecentsArray")
-        //store array of ints that are indexes of drinks
-        
         if finalUserData.name != "User"{
             /*
              storing multiple users will require the use of an external database
@@ -76,6 +98,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             storedUserData.set(finalUserData.age, forKey: "Age")
             storedUserData.set(finalUserData.sex, forKey: "Sex")
             storedUserData.set(drinkIndices, forKey: "DrinkIndices")
+            storedUserData.set(recentIndices, forKey: "RecentIndices")
         }
         else{
             storedUserData.removeObject(forKey: "Name")
@@ -83,6 +106,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             storedUserData.removeObject(forKey: "Age")
             storedUserData.removeObject(forKey: "Sex")
             storedUserData.removeObject(forKey: "DrinkIndices")
+            storedUserData.removeObject(forKey: "RecentIndices")
         }
     }
 
