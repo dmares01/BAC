@@ -16,11 +16,6 @@ class FavoritesTableController: UITableViewController {
         
     }
     override func viewWillAppear(_ animated: Bool) {
-        /*
-        for i in 0...2{
-            favorites[i].sort {$0.name < $1.name}
-        }
-        */
         tableView.reloadData()
     }
 

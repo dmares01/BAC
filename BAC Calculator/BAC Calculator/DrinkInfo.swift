@@ -242,4 +242,4 @@ var wines: [DrinkInfo] = [
 
 //-MARK: Favorites/Recents
 var favorites: [[DrinkInfo]] = [[/*Beer*/],[/*Liquor*/],[/*Wine*/]]
-var recents: [DrinkInfo] = []
+var recents: [[DrinkInfo]] = [[/*Beers*/],[/*Liquor*/],[/*Wine*/]]
