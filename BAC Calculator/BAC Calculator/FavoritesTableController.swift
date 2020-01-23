@@ -47,6 +47,23 @@ class FavoritesTableController: UITableViewController {
 
         return cell
     }
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        //print("Here is a test of the accessory button")
+        var favIndices = (favCellIndex: 0, sectionIndex: 0)
+        favIndices.favCellIndex = indexPath.row
+        favIndices.sectionIndex = indexPath.section
+        performSegue(withIdentifier: "calculateBACSegueFromFavorite", sender: indexPath)
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell: UITableViewCell = tableView.cellForRow(at: indexPath)!
+        cell.accessoryType = UITableViewCell.AccessoryType.detailDisclosureButton
+    }
+    
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let cell: UITableViewCell = tableView.cellForRow(at: indexPath)!
+        cell.accessoryType = UITableViewCell.AccessoryType.none
+    }
     
 
     /*
@@ -72,32 +89,26 @@ class FavoritesTableController: UITableViewController {
         }    
     }
     
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    
-    
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "calculateBACSegueFromFavorite"{
+            let showBACController = segue.destination as! ShowBACController
+            if sender != nil{
+                let index: IndexPath = sender as! IndexPath
+                var drinkCellSelected: DrinkInfo
+                drinkCellSelected = favorites[index.section][index.row]
+                showBACController.enteredDrinks.append(drinkCellSelected)
+            }
+            else{
+                
+            }
+        }
+        
+        
     }
-    */
-
 }
