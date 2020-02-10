@@ -104,11 +104,8 @@ class FavoritesTableController: UITableViewController {
                 drinkCellSelected = favorites[index.section][index.row]
                 showBACController.enteredDrinks.append(drinkCellSelected)
             }
-            else{
-                
-            }
         }
-        
-        
     }
+    
+    
 }
