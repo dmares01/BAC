@@ -21,17 +21,26 @@ class RecentsTableController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 3
     }
-
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 1:
+            return "Liquor"
+        case 2:
+            return "Wine"
+        default:
+            return "Beer"
+        }
+    }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return recents.count
+        return recents[section].count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "recentsCell", for: indexPath)
 
-        cell.textLabel?.text = recents[indexPath.row].name
+        cell.textLabel?.text = recents[indexPath.section][indexPath.row].name
 
         return cell
     }
