@@ -423,6 +423,7 @@
                                 </state>
                                 <connections>
                                     <action selector="enterNewDrinkButton:" destination="3uE-rt-2Du" eventType="touchUpInside" id="Atc-P4-Ycs"/>
+                                    <segue destination="yZa-Tf-8em" kind="unwind" unwindAction="unwindToLunchScreenWithSeque:" id="VaU-52-aWC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -445,6 +446,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zQ8-vK-Dtk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="yZa-Tf-8em" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3514" y="-1177"/>
         </scene>
