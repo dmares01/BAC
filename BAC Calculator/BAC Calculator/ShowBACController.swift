@@ -13,7 +13,7 @@ class ShowBACController: UIViewController {
     var enteredDrinks: [DrinkInfo] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(enteredDrinks[0].name)
+        //print(enteredDrinks[0].name)
         // Do any additional setup after loading the view.
         let userBAC = calculateUserBAC()
         let lowEnd = String(format: "%.03f", userBAC[0])

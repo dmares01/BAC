@@ -543,12 +543,12 @@
                     <tabBarItem key="tabBarItem" systemItem="recents" id="MSn-Y4-Je1"/>
                     <connections>
                         <outlet property="recentsTableView" destination="LPq-D7-pY5" id="Y4y-HB-bSG"/>
-                        <segue destination="3uE-rt-2Du" kind="show" id="0hL-iZ-PPB"/>
+                        <segue destination="3uE-rt-2Du" kind="show" identifier="recentsToShowSegue" id="JkG-bQ-pJX"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jvy-Op-kmC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="787" y="1118"/>
+            <point key="canvasLocation" x="806" y="1077"/>
         </scene>
         <!--More-->
         <scene sceneID="AN6-in-F1g">
@@ -590,6 +590,6 @@
         <image name="calculator" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="S3R-aV-KB8"/>
+        <segue reference="JkG-bQ-pJX"/>
     </inferredMetricsTieBreakers>
 </document>
