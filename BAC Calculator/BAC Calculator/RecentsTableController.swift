@@ -70,6 +70,11 @@ class RecentsTableController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         //print("Here is a test of the accessory button")
+        /*
+        var drinkCellSelected: DrinkInfo
+        drinkCellSelected = recents[indexPath.section][indexPath.row]
+        print(drinkCellSelected)
+        */
         performSegue(withIdentifier: "recentsToShowSegue", sender: indexPath)
     }
       
@@ -79,8 +84,7 @@ class RecentsTableController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        
-        if segue.identifier == "recentsToShowSeque"{
+        if segue.identifier == "recentsToShowSegue"{
             let showBACController = segue.destination as! ShowBACController
             if sender != nil{
                 let index: IndexPath = sender as! IndexPath

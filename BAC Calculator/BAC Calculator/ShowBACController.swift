@@ -18,11 +18,13 @@ class ShowBACController: UIViewController {
         let userBAC = calculateUserBAC()
         let lowEnd = String(format: "%.03f", userBAC[0])
         let highEnd = String(format: "%.03f", userBAC[1])
-        //print(userBAC[1])
         lowEndLabel.text = lowEnd
         highEndLabel.text = highEnd
         enterNewDrinkButton.layer.cornerRadius = 20;
         enterNewDrinkButton.frame = CGRect(x: 100, y: 100, width: 60, height: 20);
+        for drink in enteredDrinks{
+            print(drink.name)
+        }
     }
     
     func calculateUserBAC() -> [Double]{
@@ -34,8 +36,7 @@ class ShowBACController: UIViewController {
     @IBOutlet var lowEndLabel: UILabel!
     @IBOutlet var highEndLabel: UILabel!
     @IBOutlet var enterNewDrinkButton: UIButton!
-    
-    
+
     @IBAction func enterNewDrinkButton(_ sender: Any) {
         
     }
