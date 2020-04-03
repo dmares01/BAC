@@ -90,7 +90,7 @@ class RecentsTableController: UITableViewController {
                 let index: IndexPath = sender as! IndexPath
                 var drinkCellSelected: DrinkInfo
                 drinkCellSelected = recents[index.section][index.row]
-                showBACController.enteredDrinks.append(drinkCellSelected)
+                enteredDrinks.append(drinkCellSelected)
             }
         }
     }

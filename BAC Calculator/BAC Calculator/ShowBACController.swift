@@ -10,11 +10,11 @@ import UIKit
 
 class ShowBACController: UIViewController {
     var currentSession = SessionInfo(drinkingTime: 0.0, sessionStartTime: Date(), sessionEndDate: Date())
-    var enteredDrinks: [DrinkInfo] = []
+    //var enteredDrinks: [DrinkInfo] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //print(enteredDrinks[0].name)
-        // Do any additional setup after loading the view.
+        //enteredDrinks.append(newDrink)
         let userBAC = calculateUserBAC()
         let lowEnd = String(format: "%.03f", userBAC[0])
         let highEnd = String(format: "%.03f", userBAC[1])

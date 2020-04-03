@@ -13,14 +13,19 @@ struct DrinkInfo {
     var typeOfAlcohol: String
     var percentOfAlcohol: Double
 
-
-init(name: String, amountOfAlcohol: Double, typeOfAlcohol: String,
-        percentOfAlcohol: Double) {
-    self.name = name
-    self.amountOfAlcohol = amountOfAlcohol
-    self.typeOfAlcohol = typeOfAlcohol
-    self.percentOfAlcohol = percentOfAlcohol
-    }
+    init(){
+        self.name = ""
+        self.amountOfAlcohol = 0.0
+        self.typeOfAlcohol = ""
+        self.percentOfAlcohol = 0.0
+        }
+    init(name: String, amountOfAlcohol: Double, typeOfAlcohol: String,
+            percentOfAlcohol: Double) {
+        self.name = name
+        self.amountOfAlcohol = amountOfAlcohol
+        self.typeOfAlcohol = typeOfAlcohol
+        self.percentOfAlcohol = percentOfAlcohol
+        }
     
 }
 
@@ -243,3 +248,4 @@ var wines: [DrinkInfo] = [
 //-MARK: Favorites/Recents
 var favorites: [[DrinkInfo]] = [[/*Beer*/],[/*Liquor*/],[/*Wine*/]]
 var recents: [[DrinkInfo]] = [[/*Beers*/],[/*Liquor*/],[/*Wine*/]]
+var enteredDrinks: [DrinkInfo] = []
